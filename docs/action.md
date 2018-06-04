@@ -83,3 +83,14 @@ You can view our API documentation on actions to see how to actually use the act
 > Caution: In case when an action has an action count condition and depends on its own action count, the rewards are taken as per the initial action count before execution.
 
 
+## Visibility Requirements
+
+Visibility requirements allow your action to be visible only to a certain type of players. The conditions can be specified in a similar fashion as the conditions in rewards, however some conditions are not available.
+
+|   Type  | Condition to select | Description |
+|---------|---------------------|-------------|
+| Metric based condition | If the player has the metric | Metric based conditions can be used to check the value of a metric against a player's scores. E.g: A player with a certain badge or having score higher than 450, etc. |
+| Action count based condition | If an action has been triggered N times | Action count based conditions check against the number of times the player has performed the specified action. |
+| Team based condition | If the player is a part of the team | Team based conditions are used to check against the player's role in a team. |
+| Aggregate conditions - All | All of the following rules | Various conditions can be combined by an AND condition. |
+| Aggregate conditions - Any | Any of the following rules | Various conditions can be combined by an OR condition. |
