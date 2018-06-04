@@ -34,3 +34,12 @@ The various kinds of conditions available to you are:
 | Team based condition | If the player is a part of the team | Team based conditions are used to check against the player's role in a team. |
 | Aggregate conditions - All | All of the following rules | Various conditions can be combined by an AND condition. |
 | Aggregate conditions - Any | Any of the following rules | Various conditions can be combined by an OR condition.
+
+## Scoring Probability
+
+A scoring probability (a.k.a chance) can be used to bring in an element of randomness or chance into the system. Scoring probability in actions can be set at 2 levels:
+
+* Overall action level
+* Per-reward level
+
+A scoring probability at the action level would affect all the rewards of the action. It would be useful when you want to give all rewards together. The reward level probability would affect only a particular reward, hence you can control probabilities of each reward individually. Both probabilities can also be used simultaneously.
