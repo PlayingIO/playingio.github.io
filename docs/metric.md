@@ -27,3 +27,14 @@ There are several ways you can use sets.
 * You can use set items as badges to represent a player's progress in various aspects of your game.
 * You can use set items as tags or inventory items on a player.
 * You can combine set items with achievement rules to make player achievements.
+
+## State Metrics
+
+> A state metric indicates a particular state which the player is currently in.
+
+While designing state metrics, you need to define preset states, which are essentially the various states that a player can take.
+
+### Use Cases
+
+A state metric can be used to associate a state with a player. This could be as simple as active, online, banned, etc or can be combined with our level rules to create a player leveling system.
+
