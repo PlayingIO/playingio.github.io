@@ -59,3 +59,14 @@ There are 3 different types of rate limits that can be applied, they are:
 * **Leaky Bucket** - The leaky bucket algorithm, though generally used in the world of networking, might also find use in games. You can read more about it [here](http://en.wikipedia.org/wiki/Leaky_bucket).
 
 
+## Formula and Variables
+
+Variables in actions can be defined to tweak the behavior of actions at runtime. Variables can be of 2 types - Strings and Integers. They can be used in both conditions and in rewards by creating a formula.
+
+Here are some details on how variables and scores can be used in a formula:
+
+|   Type  | Referenced As | Description |
+|---------|---------------|-------------|
+| Variables | $vars | Runtime variables can be referenced in the formula as $vars.variable_name. |
+| Scores | $scores | Player's scores can be referenced in a formula, however it is slightly different for different kinds of metrics. <br/>In case of a point/compound metric, they can be referenced as $scores.metric_id and it will be replaced by the value of the metric. <br/>In case of a set metric, in addition to the metric's ID, we would need the item name. It can be referenced as $scores.metric_id.item_name or $scores.metric_id["item_name"]. This will be replaced by the count of items of that type. |
+| Constants | - | Only String or Integer constants can be used in a formula. Integer constants can be used directly, but String constants need to be surrounded by "". E.g: Integer - 53 String - "53" |
