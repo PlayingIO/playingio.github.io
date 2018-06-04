@@ -13,3 +13,17 @@ Point metrics can be used to create leaderboards. You can also model level syste
 #### Use Cases
 
 Point metrics are ideal to capture any kind of progress or for keeping track of any activity.
+
+### Set Metrics
+
+> A set metric is a group of unordered items.
+
+While designing set metrics, you need to define preset items.
+
+### Use Cases
+
+There are several ways you can use sets.
+
+* You can use set items as badges to represent a player's progress in various aspects of your game.
+* You can use set items as tags or inventory items on a player.
+* You can combine set items with achievement rules to make player achievements.
