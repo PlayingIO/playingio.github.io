@@ -29,13 +29,13 @@ Metrics
 
 Metrics are what you measure within a game. They are used to track player performance and behaviors. Eg: Points, Badges, Achievement, etc.
 
-Learn more: [Metrics Manual](metrics.md)
+Learn more: [Metrics Manual](metric.md)
 
 Actions
 
 Actions are the most basic way of capturing player actions and can be used to capture simple player events such as liking a post or finishing a quiz.
 
-Learn more: [Actions Manual](actions.md)
+Learn more: [Actions Manual](action.md)
 
 Missions
 
@@ -43,22 +43,23 @@ Missions allow the game designer to structure the player journey. You can use pr
 
 Missions can model common activities on a site like answering questions, voting, sharing, etc. They can also model more complex choice driven story based quests and challenges.
 
-Learn more: [Missions Manual](missions.md)
+Learn more: [Missions Manual](mission.md)
 
 Teams
 
 Teams define a subset of players within your game and can be easily used to model teams within your organization.
 
-Learn more: [Teams Manual](teams.md)
+Learn more: [Teams Manual](team.md)
 
 Rules
 
 Rules state conditions which when fulfilled by a player affect the player in some way. You can use them to award achievements and level up players when they get a certain amount of points.
 
-Learn more: [Rules Manual](rules.md)
+Learn more: [Rules Manual](rule.md)
 
 Leaderboards
 
 You can use leaderboards to drive competitive behaviours within a game. Our leaderboards come with a ton of features that take you to the next level. Oh wait, did I forget, all leaderboards update in real time!
 
-Learn more: [Leaderboards Manual](leaderboards.md)
+Learn more: [Leaderboards Manual](leaderboard.md)
+
