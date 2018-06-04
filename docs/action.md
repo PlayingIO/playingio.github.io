@@ -25,3 +25,12 @@ Rewards are a set of metrics (points, badges, etc.) that a player gets when an a
 Each reward can have its own conditions which are to be satisfied for the reward to be executed. More advanced scoring conditions such as probability and rate limits can also be set.
 
 The various kinds of conditions available to you are:
+
+|   Type  | Condition to select | Description |
+|---------|---------------------|-------------|
+| Metric based condition | If the player has the metric | Metric based conditions can be used to check the value of a metric against a player's scores. e.g., A player with a certain badge or having score higher than 450, etc. |
+| Action count based condition | If an action has been triggered N times | Action count based conditions check against the number of times the player has performed the specified action. |
+| Time based condition | If the following timed condition is satisfied | Time based conditions can be used to check against the time the action was performed. These comparisons are done taking into account the time zone of the game. |
+| Team based condition | If the player is a part of the team | Team based conditions are used to check against the player's role in a team. |
+| Aggregate conditions - All | All of the following rules | Various conditions can be combined by an AND condition. |
+| Aggregate conditions - Any | Any of the following rules | Various conditions can be combined by an OR condition.
