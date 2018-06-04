@@ -70,3 +70,16 @@ Here are some details on how variables and scores can be used in a formula:
 | Variables | $vars | Runtime variables can be referenced in the formula as $vars.variable_name. |
 | Scores | $scores | Player's scores can be referenced in a formula, however it is slightly different for different kinds of metrics. <br/>In case of a point/compound metric, they can be referenced as $scores.metric_id and it will be replaced by the value of the metric. <br/>In case of a set metric, in addition to the metric's ID, we would need the item name. It can be referenced as $scores.metric_id.item_name or $scores.metric_id["item_name"]. This will be replaced by the count of items of that type. |
 | Constants | - | Only String or Integer constants can be used in a formula. Integer constants can be used directly, but String constants need to be surrounded by "". E.g: Integer - 53 String - "53" |
+
+
+## Action Count
+
+Actions can also be triggered with a count. This count basically acts as a multiplier for the action's rewards.
+
+For example, in a gym app, running 1km is an action with reward of calories burnt 300, if you perform the same action with a count of 3, rewards would now be 900. This way you dont have to make 3 calls for an action or make a new action for a 3km run. The action count can only be an integer.
+
+You can view our API documentation on actions to see how to actually use the action count.
+
+> Caution: In case when an action has an action count condition and depends on its own action count, the rewards are taken as per the initial action count before execution.
+
+
