@@ -81,6 +81,7 @@ Like mentioned earlier, there are no restrictions on the scores that can be give
 Conditions in custom rules are very similar to that of actions, here is the break down of the different kinds of conditions that can be put into place:
 
 |    Type    | Condition to select | Description |
+|------------|---------------------|-------------|
 | Metric based condition | If the player has the metric | Metric based conditions can be used to check the value of a metric against a player's scores. e.g., A player with a certain badge or having score higher than 450, etc. |
 | Action count based condition | If an action has been triggered N times | Action count based conditions check against the number of times the player has performed the specified action. |
 | Time based condition | If the following timed condition is satisfied | Time based conditions can be used to check against the time the action was performed. These comparisons are done taking into account the time zone of the game. |
@@ -128,4 +129,14 @@ In any case (condition or scores) valid expression can be created using the foll
 | Variables | $vars | Runtime variables can be referenced in the formula as $vars.variable_name or $vars["variable_name"]. <br/><br/> We recommend using the bracket syntax $vars[""], because if some variable names are invalid javascript identifiers, the condition would fail to execute properly if they are accessed with the dot (.) syntax $vars. <br/><br/> Variables can be either strings or integers. |
 | Scores    | $scores | Player's scores can be referenced in a formula, however it is slightly different for different kinds of metrics.<br/><br/> In case of a point/compound metric, they can be referenced as $scores.metric_id and it will be replaced by the value of the metric. <br/><br/>In case of a set metric, in addition to the metric's ID, we would need the item name. It can be referenced as $scores.metric_id.item_name or $scores.metric_id["item_name"]. This will be replaced by the count of items of that type. <br/><br/>We recommend using the bracket syntax $scores[""], because if some metric ids are invalid javascript identifiers, the condition would fail to execute properly if they are accessed with the dot (.) syntax $scores. |
 | Constants | - | Only string or integer constants can be used in a formula. Integer constants can be used directly, but string constants need to be surrounded by "". viz. integer - 53, string - "53". |
+
+
+
+## Scopes
+
+Scopes let you create leaderboards for an arbitrary group of players. These are particularly useful when you want to create groups based on the source of an event.
+
+Consider a class in which students are being offered various optional courses. Each course has quizzes which on completion grant rewards to the students. To maintain a leaderboard for any given course, instead of creating teams for each course, you can simply pass the course's name or any other unique identifier as the scope and a leaderboard for that course will be created on the fly. This leaderboard will only track actions or rules or missions that have been performed with the given scope.
+
+Scopes would need a custom leaderboard in the design of the game. When executing an action, rule or task, you need to pass the scopes an array of objects with a keys id and entity_id. The id is the actual scope ID and the entity_id is the ID of the player who is being scored.
 
