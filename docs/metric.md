@@ -1,7 +1,5 @@
 ---
-id: metric
 title: Metrics
-sidebar_label: Metrics
 ---
 
 ## Metrics
