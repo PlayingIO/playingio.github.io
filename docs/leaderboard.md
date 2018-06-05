@@ -61,4 +61,10 @@ If your application has many sub-challenges, like courses on a learning platform
 With this example, hope you got a better picture of what custom scoped leaderboards can do.
 
 
+## Detailed Leaderboards
+
+With detailed leaderboards, we can look into every player's activity and get details of how the players earned their score. This can be useful for players in figuring out their strengths and weeknesses in comparison to others.
+
+> Detailed leaderboards are only available for player leaderboards
+
 
