@@ -73,3 +73,19 @@ There might be scenarios where using an action might not be the right, specially
 In a classroom model, you might be doing quizes and giving homework, both are a great fit for actions, but what if you want to give special rewards to those who have been consistent? You can create a custom rule that can be triggered every week to do this check.
 
 Similarly, in sales teams, recording sales, leads, calls, etc are easy to do via actions. Now if you want to check if people have reached their targets or give out bonuses to those who exceeded them, custom rules can easily do the job.
+
+### Rewards in Custom Rules
+
+Like mentioned earlier, there are no restrictions on the scores that can be given to players via custom rules. These scores will be given everytime a player satisfies the reward conditions and there is no concept of chance/probability in custom rules.
+
+Conditions in custom rules are very similar to that of actions, here is the break down of the different kinds of conditions that can be put into place:
+
+|    Type    | Condition to select | Description |
+| Metric based condition | If the player has the metric | Metric based conditions can be used to check the value of a metric against a player's scores. e.g., A player with a certain badge or having score higher than 450, etc. |
+| Action count based condition | If an action has been triggered N times | Action count based conditions check against the number of times the player has performed the specified action. |
+| Time based condition | If the following timed condition is satisfied | Time based conditions can be used to check against the time the action was performed. These comparisons are done taking into account the time zone of the game. |
+| Formula Based | If the following equation is satisfied | We can use variables and player's scores in conditions. In this kind of condition, we can specify both the LHS and RHS of an equation. |
+| Team based condition | If the player is a part of the team | Team based conditions are used to check against the player's role in a team. |
+| Aggregate conditions - All | All of the following rules | Various conditions can be combined by an AND condition. |
+| Aggregate conditions - Any | Any of the following rules | Various conditions can be combined by an OR condition. |
+
