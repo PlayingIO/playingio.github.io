@@ -152,3 +152,37 @@ Fixed Window - In a fixed window rate limit, the windows are fixed at particular
 Leaky Bucket - The leaky bucket algorithm, though generally used in the world of networking, might also find use in games. You can read more about it here.
 
 
+
+## Trigger Notifications
+
+Triggers notifications enable players to interact with a mission through their feed steam.
+
+
+
+## Scoring
+
+A task/sub-mission can have multiple rewards which take place when they are completed. Rewards change the scores of the player who performed the task/sub-mission.
+
+### Advanced Scoring Mechanics
+Besides the normal simple scoring mechanism, Playing I/O provides you a number of advanced scoring mechanics which can be used to make complex gamified experiences.
+
+#### Chance
+
+When a player completes a task the scoring actions associated with it are always applied to the player. Using the chance mechanic you can specify the probability of Playing I/O applying a reward.
+
+There are 2 types of chance mechanics currently:
+
+* Activity Reward Chance - This is the probability of Playing I/O trying to apply the rewards of an activity. If the activity has no rewards this does not have any effect. You can do this if you have many rewards on an activity and wish to have Playing I/O always apply them together.
+
+* Individual Reward Chance - This is the probability of Playing I/O applying an individual rewards to a player. You can do this if you want to set a different chance for applying each reward on the completion of an activity.
+
+> You can combine both Activity Reward Chance and Individual Reward Chance together on a single activity.
+
+#### Resolution
+
+You can use scoring resolutions to delay the application of rewards on a player. Instead of applying the rewards on completion of a task you can specify a second task as the resolution task for the reward.
+
+#### Recurrence
+
+Recurrence is a mechanic which only works with looped tasks. Usually, Playing I/O applies the reward on a looped task only once the task has been completed. A looped task is considered to be complete only after all it's loops are complete. Sometimes this is not the desired behavior. You may wish to apply the reward on every loop of the task. This can be done by marking the reward as a recurring reward.
+
