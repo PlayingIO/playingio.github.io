@@ -89,3 +89,22 @@ Conditions in custom rules are very similar to that of actions, here is the brea
 | Aggregate conditions - All | All of the following rules | Various conditions can be combined by an AND condition. |
 | Aggregate conditions - Any | Any of the following rules | Various conditions can be combined by an OR condition. |
 
+
+### Variables and Formula
+
+With Custom rules, you get the option of sending variables at runtime. With these variables, the behavior of the rule can be modified at runtime.
+
+These are the properties of variables that should be kept in mind while designing.
+
+Variables allow users to input dynamic contents for evaluating rules when an action is performed. Each variable has the following properties:
+
+|  Field  | Description |
+|---------|-------------|
+| name    | The name of the variable. |
+| type    | This is the type of the variable it can be a number or a string. |
+| required| Whether the variable is required when the player performs this action. |
+| default | The default value of the variable, which is applied only if the required property is not set. |
+
+Variables can be used in creating a formula, which in turn can be used in conditions and rewards.
+
+
