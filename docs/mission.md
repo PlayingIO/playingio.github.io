@@ -198,3 +198,26 @@ Scopes are currently available only via API and are not available in the simulat
 
 
 
+## Joining Channel
+
+Joining channel basically lets you manage how other players can join a mission. There are 3 choices:
+
+* Free To Join - The mission is visible and anyone can join it with any role and lane.
+* Request Based - The mission is visible but players need to request access to join the mission.
+* Invite Only - The mission is not visible to players who are not a part of the mission. Players can only join via invitations.
+
+
+
+## Creation Requirements
+
+Conditions that the player must satisfy in order to be able to create a mission instance.
+
+
+
+## Restrictions
+
+Restrictions can be set on the mission creation itself. These restrictions can be either per player restrictions or global restrictions.
+
+* Process Limit - Limit the maximum number of mission instances created. Default: Infinity
+* Active Process Limit - Limit the number of maximum active missiones that can exist at any given point. Default: Infinity
+
