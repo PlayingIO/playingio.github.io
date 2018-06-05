@@ -1,10 +1,10 @@
 ---
-id: manual
-title: Manuals
-sidebar_label: Manuals
+id: design-overview
+title: Design Overview
+sidebar_label: Design Overview
 ---
 
-## Manuals
+## Design Overview
 
 These collection of manuals tell you everything you need to know about the components on the PlayingIO Platform.
 
