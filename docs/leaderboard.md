@@ -68,3 +68,17 @@ With detailed leaderboards, we can look into every player's activity and get det
 > Detailed leaderboards are only available for player leaderboards
 
 
+## Merged Leaderboards
+
+Playing I/O offers a Merged Leaderboard feature, which allows you to visualize data across multiple leaderboards by merging them into a single leaderboard. To merge leaderboards, all you have to do is pass the merge_with query parameter while reading a leaderboard. The query string needs to be a comma-separated string in the following format:
+
+```code
+[leaderboard_definition_id]{/[scope]}|[cycle]|{[timestamp]}
+```
+
+Here the leaderboard_definition_id is the ID of the leaderboard's definition. If the leaderboard is a custom scoped leaderboard, you need to pass its scope separated by a /. You then need to specify the leaderboard cycle (one of alltime, yearly, monthly, weekly or daily).
+
+In case of cycles other than alltime, a timestamp is required to find out exactly which cycle is to be merged. As indicated in the above format, the leaderboard definition ID, cycle and timestamp information need to be separated by a pipe |.
+
+The ranking of the leaderboard will still be done based on the original leaderboard. You can pretty much merge any leaderboard, only limitation is that the leaderboards being merged need to have the same entity type.
+
