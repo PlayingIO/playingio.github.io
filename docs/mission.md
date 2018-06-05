@@ -186,3 +186,15 @@ You can use scoring resolutions to delay the application of rewards on a player.
 
 Recurrence is a mechanic which only works with looped tasks. Usually, Playing I/O applies the reward on a looped task only once the task has been completed. A looped task is considered to be complete only after all it's loops are complete. Sometimes this is not the desired behavior. You may wish to apply the reward on every loop of the task. This can be done by marking the reward as a recurring reward.
 
+
+
+## Scopes
+
+Scopes let you create leaderboards for an arbitrary group of players. These are particularly useful when you want to create groups based on the source of an event.
+
+Consider a class in which students are being offered various optional courses. Each course has quizzes which on completion grant rewards to the students. To maintain a leaderboard for any given course, instead of creating teams for each course, you can simply pass the course's name or any other unique identifier as the scope and a leaderboard for that course will be created on the fly. This leaderboard will only track actions/rules/missiones that have been performed with the given scope.
+
+Scopes are currently available only via API and are not available in the simulator and would need a custom leaderboard in the design of the game. When executing an action, rule or task, you need to pass the scopes an array of objects with a keys id and entity_id. The id is the actual scope ID and the entity_id is the ID of the player who is being scored.
+
+
+
