@@ -27,3 +27,26 @@ You can have leaderboards on teams too. To create a team leaderboard, set the Th
 > A team's score on the leaderboard is not the sum of all the scores of its members.
 
 
+## Leaderboard Cycles
+
+With cycles, leaderboards can be reset at regular intervals which lets you find the top performers in a cycle.
+
+
+## Leaderboard Scopes
+
+The scope of a leaderboard defines who all will be tracked on the leaderboard. If the scope type is team_definition or team_instance, then an additional scope.id field is required which tells which team definition you want the leaderboard for.
+
+For player leaderboards, there can be 4 scopes:
+
+* Game: Leaderboard is game-wide.
+* Across All Teams of Type(team_definition): Leaderboard is across all instances of a team definition.
+* Within Each Team of Type(team_instance): Leaderboard is restricted to each instance of a team definition.
+* Custom: Leaderboard is free-form. You can decide what contributions you want to count on the leaderboard.
+
+For team leaderboards, there can be only 3 scopes:
+
+* Game: Leaderboard is game-wide.
+* Across All Teams of Type(Team Definition): Leaderboard is across all instances of a team definition.
+* Custom: Leaderboard is free-form. You can decide what contributions you want to count on the leaderboard.
+
+
