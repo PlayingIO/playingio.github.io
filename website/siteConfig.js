@@ -19,7 +19,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'PlayingIO Platform',
+  title: 'Playing I/O Platform',
   tagline: 'Playful opensource platform as a service',
   url: 'https://playingio.github.io',
   baseUrl: '/',
@@ -62,7 +62,7 @@ const siteConfig = {
   copyright:
     'Copyright © ' +
     new Date().getFullYear() +
-    ' PlayingIO Platform',
+    ' Playing I/O Platform',
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks

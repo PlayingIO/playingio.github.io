@@ -6,9 +6,9 @@ sidebar_label: Actions
 
 ## Actions
 
-> Actions are an easy way of capturing events on the PlayingIO platform.
+> Actions are an easy way of capturing events on the Playing I/O platform.
 
-Actions are basic triggers that allow you to translate player events/actions into a measurable entities on PlayingIO.
+Actions are basic triggers that allow you to translate player events/actions into a measurable entities on Playing I/O.
 
 An action has 3 parts:
 
@@ -20,7 +20,7 @@ An action has 3 parts:
 
 ### Use Cases
 
-Any task done by a person can be easily recorded in PlayingIO by using Actions. For example, an action could be going to the gym, reading a book, liking a facebook post or answering a quiz.
+Any task done by a person can be easily recorded in Playing I/O by using Actions. For example, an action could be going to the gym, reading a book, liking a facebook post or answering a quiz.
 
 An action can be used pretty much anywhere. In case of an online education platform, action could be watching a tutorial video, which would fetch a player some experience points that can be used to show the person their progress within the course. Similarly, answering questions or posting on forums can also be actions that contribute to their progress or rating.
 

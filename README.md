@@ -1,4 +1,4 @@
-# PlayingIO Documentation Website
+# Playing I/O Documentation Website
 
 This code is used to generate https://playingio.github.io. It pulls in files from `docs/` and `website/` to generate html files served on the site.
 
