@@ -120,3 +120,21 @@ You can use this flow to model many choices available to a player which the play
 You can use this flow to synchronize several paths that a player could take at a common point before moving forward.
 
 
+### Sub-Missions
+
+Sub-Missions are an effective way to manage arbitrary complexity within your missiones. Sub-Missions are like small missiones within a larger one. There are a few things you need to know to work with sub-missiones.
+
+#### Task IDs in Sub-Missions
+
+Sub-Missions add a new context for your tasks. This means that two different sub-missiones can have tasks with the same IDs within them. This can be useful for repeated tasks across many sub-missiones.
+
+
+### Lanes
+
+Lanes are a restricting mechanism used to divide the tasks within a mission among different types of players. This allows you to co-ordinate complex activities between many different teams of players.
+
+Candidates of a lane are eligible to perform tasks/sub-missiones/gateways belonging to that lane. Players can be a part of multiple lanes and cannot perform tasks in lanes they are not a part of.
+
+> You can combine lanes with resolution to create an approval mechanism.
+
+
