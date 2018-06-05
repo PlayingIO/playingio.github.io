@@ -82,3 +82,41 @@ Unlike converging Parallel gateways, converging Exclusive gateways allow players
 | ID       | A unique ID for the gateway within the mission/sub-mission |
 | Name     | A name for the gateway |
 | Lane     | The lane to which this sub-mission belongs |
+
+
+### Connection Restrictions
+
+Building missiones using nodes and flows is fairly straight forward, however, there are some restrictions:
+
+* Tasks/Sub-Missions can only have 1 out-flow and 1 in-flow
+* Gateways can be either converging or diverging.
+  * Diverging gateways have atmost 1 in-flows and atleast 1 out-flows
+  * Converging gateways have atmost 1 out-flows and atleast 1 in-flows
+
+
+### Start Nodes
+
+All nodes without any in-flows in a mission are called Start Nodes. When a player starts a mission, the very first tasks available to him are the Start Nodes in a mission.
+
+
+### Common Flow Patterns
+
+There are a lot of things you can achieve with missiones, from designing approval systems, to parallel quests and more! We illustrate some of the most common flow patterns below:
+
+#### Linear Flow
+
+You can use this flow to model a linear sequence of activities which the player must perform.
+
+#### Approval Flow
+
+You can use this flow to model a simple approval mechanism. In the diagram, only candidates of the admin lane can perform the approve task. When a player finishes the approve task it resolves the scoring actions on the work task.
+
+#### Parallel Split Flow
+
+You can use this flow to model many choices available to a player which the player can perform in any order.
+
+#### Synchronization Flow
+
+You can use this flow to synchronize several paths that a player could take at a common point before moving forward.
+
+
