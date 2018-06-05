@@ -138,3 +138,17 @@ Candidates of a lane are eligible to perform tasks/sub-missiones/gateways belong
 > You can combine lanes with resolution to create an approval mechanism.
 
 
+
+## Rate Limiting
+
+Playing I/O allows you to control the rate at which any task or sub-mission within a mission can performed. You can use this to create an effective an anti-gaming mechanic which prevents players from abusing your system. You can also use it to effect scheduled daily, weekly or monthly tasks.
+
+There are 3 different types of rate limits that can be applied, they are:
+
+Rolling Window - A moving window type rate limit essentially means that at any given point in time, the activity can only be done a specified number of times in the last interval. Let us say your rate limit is 5 times per day, this would translate to a limit of 5 times in the last 24 hours (more precisely, in the last 24x60x60x1000 milliseconds) at any given point in time. Since we need to store timestamps for each event, there is a limit of 50 events in an interval. This is the default algorithm.
+
+Fixed Window - In a fixed window rate limit, the windows are fixed at particular time intervals - minutes, hours, days, weeks, months and years. What this means is that if your rate limit is 5 per day, the activity can be performed 5 times in a calendar day. In this alogirthm, the game's timezone is used to figure out calendar limits. The interval unit has been restricted only to 1 (i.e. 5 times in 1 day, in 1 minute, etc) as some other values can lead to unexpected results.
+
+Leaky Bucket - The leaky bucket algorithm, though generally used in the world of networking, might also find use in games. You can read more about it here.
+
+
