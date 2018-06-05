@@ -10,8 +10,8 @@ These collection of manuals tell you everything you need to know about the compo
 
 * [**Metrics**](metric.md)
 * [**Actions**](action.md)
-* [**Missions**](mission.md)
 * [**Teams**](team.md)
+* [**Missions**](mission.md)
 * [**Rules**](rule.md)
 * [**Leaderboards**](leaderboard.md)
 

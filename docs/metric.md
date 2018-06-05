@@ -12,7 +12,7 @@ Metrics are used to measure the performance of the players in your game, of team
 
 > The simplest form of metrics, they are found in most games. They are just a numerical value which increases/decreases when players perform actions. They are used to keep track of player progress.
 
-Points can be given to a player by performing an action, a task in a process or by executing custom rules.
+Points can be given to a player by performing an action, a task in a mission or by executing custom rules.
 
 Point metrics can be used to create leaderboards. You can also model level systems by combining a point metric and a state metric in a level rule.
 

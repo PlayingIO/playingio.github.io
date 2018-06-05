@@ -6,7 +6,7 @@ title: Getting Started
 
 We call all gamified systems a Game on Playing I/O. This does not mean that they are the sort of games you play everyday like Angry Birds or Candy Crush Saga.
 
-A Game on Playing I/O is a system of processes, teams, metrics and rules which come together to engage a player in an experience. The experience could be anything from visiting a website to doing work in your office.
+A Game on Playing I/O is a system of missions, teams, metrics and rules which come together to engage a player in an experience. The experience could be anything from visiting a website to doing work in your office.
 
 Playing I/O acts as the game engine behind these systems. It takes care of all the hard stuff like tracking scores, team structures, player progress and maintaining real-time leaderboards.
 
@@ -35,7 +35,7 @@ Learn more: [Actions Manual](action.md)
 
 Missions
 
-Missions allow the game designer to structure the player journey. You can use processes to control the order in which players can perform the tasks available to him.
+Missions allow the game designer to structure the player journey. You can use missions to control the order in which players can perform the tasks available to him.
 
 Missions can model common activities on a site like answering questions, voting, sharing, etc. They can also model more complex choice driven story based quests and challenges.
 
