@@ -26,8 +26,9 @@ const siteConfig = {
   projectName: 'playingio.github.io',
   organizationName: 'playingio',
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
+    {doc: 'what-why', label: 'Docs'},
+    {doc: 'getting-started', label: 'Getting Started'},
+    {doc: 'api', label: 'API'},
     {page: 'help', label: 'Help'},
     {blog: true, label: 'Blog'},
   ],

@@ -1,11 +1,19 @@
 {
   "docs": {
-    "Play Design": ["getting-started"],
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "Intro": [
+      "what-why",
+      "getting-started",
+      "installation",
+      "concepts-overview"
+    ],
+    "Manuals": [
+      "design-overview",
+      "metric",
+      "action",
+      "mission",
+      "team",
+      "rule",
+      "leaderboard"
+    ]
   }
 }
