@@ -34,3 +34,22 @@ You can use these conditions that while defining the achievement requirements:
 Apart from awarding achievements on certain conditions, you can organize achievement rules in complex hierarchies using checks. Each tier of achievements can check if the player was already awarded any achievements on the previous tier.
 
 
+
+## Level Rules
+
+A level rule is used to determine the level of a player. The level rule basically changes the state of a player based on various thresholds on a given point metric.
+
+A level rule has 3 parts:
+
+* Base Metric - A point metric which is checked to determine the level to be assigned. The 'minimum' and 'maximum' constraints of the base metric determines the threshold value range.
+* Level Metric - A state metric whose preset states represent the different levels.
+* Levels - An ordered list of levels. Each level consists of a state and a threshold value. A player achieves a level when they cross the threshold for the previous level in the list.
+
+### Use Cases
+
+You can create an experience based level system using level rules. You could also use them to show different reward tiers within a game.
+
+Caution: Level rules only work if a player has a metric, so in case you want a player to have a certain level after creation, you might want to consider bootstrapping the base metric.
+
+
+
