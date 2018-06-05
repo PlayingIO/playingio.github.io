@@ -50,3 +50,15 @@ For team leaderboards, there can be only 3 scopes:
 * Custom: Leaderboard is free-form. You can decide what contributions you want to count on the leaderboard.
 
 
+## Custom Scoped Leaderboards
+
+Regular leaderboards track a player or team's metric, regardless of how they are accumulated. While this is enough in most use cases, there are some scenarios where you'd desire something more flexible. Say, you want a leaderboard which is updated only when certain activities are performed, then you can use our Custom leaderboards. Lets try understanding it better with an example.
+
+If your application has many sub-challenges, like courses on a learning platform, you might want to have leaderboards within each course. Now each course has challenges that you mapped to Playing I/O's Actions and the player is awarded some points on its completion. With normal leaderboards, points scored from all courses would be included, which is fine for overall leaderboards but not for course-level leaderboards. So, to get course- level leaderboards, all we need to do is pass a scope when performing the action. This scope can be the course ID for instance which would automatically create a leaderboard that will track score changes only when actions are performed or rules executed with that scope. You can pass scopes when triggering actions or executing custom rules.
+
+> One Custom leaderboard can be used to track a lot of separate scopes, each having a unique identifier.
+
+With this example, hope you got a better picture of what custom scoped leaderboards can do.
+
+
+
