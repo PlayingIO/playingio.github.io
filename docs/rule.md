@@ -53,3 +53,23 @@ Caution: Level rules only work if a player has a metric, so in case you want a p
 
 
 
+## Custom Rules
+
+Unlike the other two rules, where the rewards were fixed at either a set or a state metric, there are no such restrictions in a custom rule.
+
+You can also do a lot more as they have variables that can be passed during runtime, which can be used to modify your conditions or rewards on the fly.
+
+Lastly, they need to be triggered independently via an API call and can be applied on multiple players. You can have a look at our API documentation on custom rules for the details. To know more about how rewards are applied in custom rules, click here
+
+A custom rule has 2 parts:
+
+* Variables - Variables that can be passed in during runtime and can be used in conditions for rewards or in rewards themselves. Variables can be of 2 types - either strings or integers.
+* Rewards - Rewards are a set of scores and conditions where the scores are given to a player if he satisfies the given conditions.
+
+### Use Cases
+
+There might be scenarios where using an action might not be the right, specially for some ad-hoc tasks or accounting for some unexpected behaviour.
+
+In a classroom model, you might be doing quizes and giving homework, both are a great fit for actions, but what if you want to give special rewards to those who have been consistent? You can create a custom rule that can be triggered every week to do this check.
+
+Similarly, in sales teams, recording sales, leads, calls, etc are easy to do via actions. Now if you want to check if people have reached their targets or give out bonuses to those who exceeded them, custom rules can easily do the job.
