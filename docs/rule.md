@@ -108,3 +108,24 @@ Variables allow users to input dynamic contents for evaluating rules when an act
 Variables can be used in creating a formula, which in turn can be used in conditions and rewards.
 
 
+### Formula Based Conditions:
+
+There are 2 ways we can have formula based conditions:
+
+* Equation Based - Specify both the LHS and the RHS of an equation.
+* Metric Based - The value of a metric as the LHS and an expression on the RHS.
+
+### Formula Based Scores:
+
+Rewards can also have value that use a formula and let you vary rewards at runtime (Only available via API at the moment).
+
+You are not restricted to simple expressions and can create more complex ones as per your requirement.
+
+In any case (condition or scores) valid expression can be created using the following:
+
+|   Type    | Referred As | Description |
+|-----------|-------------|-------------|
+| Variables | $vars | Runtime variables can be referenced in the formula as $vars.variable_name or $vars["variable_name"]. <br/><br/> We recommend using the bracket syntax $vars[""], because if some variable names are invalid javascript identifiers, the condition would fail to execute properly if they are accessed with the dot (.) syntax $vars. <br/><br/> Variables can be either strings or integers. |
+| Scores    | $scores | Player's scores can be referenced in a formula, however it is slightly different for different kinds of metrics.<br/><br/> In case of a point/compound metric, they can be referenced as $scores.metric_id and it will be replaced by the value of the metric. <br/><br/>In case of a set metric, in addition to the metric's ID, we would need the item name. It can be referenced as $scores.metric_id.item_name or $scores.metric_id["item_name"]. This will be replaced by the count of items of that type. <br/><br/>We recommend using the bracket syntax $scores[""], because if some metric ids are invalid javascript identifiers, the condition would fail to execute properly if they are accessed with the dot (.) syntax $scores. |
+| Constants | - | Only string or integer constants can be used in a formula. Integer constants can be used directly, but string constants need to be surrounded by "". viz. integer - 53, string - "53". |
+
