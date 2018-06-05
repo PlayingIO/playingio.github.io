@@ -1,3 +1,9 @@
+---
+id: action
+title: Actions
+sidebar_label: Actions
+---
+
 ## Actions
 
 > Actions are an easy way of capturing events on the PlayingIO platform.

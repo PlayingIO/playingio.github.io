@@ -1,3 +1,9 @@
+---
+id: manual
+title: Manuals
+sidebar_label: Manuals
+---
+
 ## Manuals
 
 These collection of manuals tell you everything you need to know about the components on the PlayingIO Platform.
