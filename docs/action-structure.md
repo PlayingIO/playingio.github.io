@@ -64,3 +64,13 @@ Condition which depends on how many times an action has been performed.
 | operator    | Can be one of the relational operators: **eq**, **ne**, **gt**, **ge**, **lt**, **le**. |
 | value       | The number of times the action should be executed by the player. |
 
+
+#### Team Based Condition
+
+Condition which depends on how many times an action has been performed.
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| definition  | Definition ID of the team which the player should be a part of. |
+| role        | The role the player should have within the team of this type. If you don't care about the role, then you can ignore this field. |
+
