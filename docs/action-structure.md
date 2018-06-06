@@ -13,6 +13,7 @@ title: Action Structure
 | probability | The probability that the player gets the rewards on completing the action. |
 | rate        | Rate Limiting an action so that users do not abuse the system.<br/>This is an array of three items, which are:</br><ul><li>Count - The number of times the player can perform this action within the window.</li><li>Timeframe - Counted in milliseconds, this is the window or timeframe within which the player can perform this action Count number of times.</li><li>Type - The type of rate limiting being used, which can be one of **ROLLING**, **FIXED**, **LEAKY**.</li></ul> |
 
+
 ## Rules
 
 The rules that would be evaluated to give rewards to the player. This is an array consisting of objects with the fields rewards and requires.
@@ -29,4 +30,16 @@ The rules that would be evaluated to give rewards to the player. This is an arra
 | verb        | Defines which operation is performed for this reward. Can be one of add, remove, set.
 | value       | The value by which the player's score changes. |
 | probabilty  | The chance that this reward in an action or process task can be given must be within [0, 1] range. |
+
+### Requires Structure
+
+This allows certain checks to be performed to make sure a player can actually see/perform/join the task, action, team.
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| type        | The type of condition. It can be one of metric, action, team, and, or. |
+| not         | If true, inverts the condition. So any check which would usually evaluate to true will now evaluate to false. |
+| expression  | An array of contexts joined with an AND or OR operator. This field is only applicable if the condition type is and or or, and replaces the context field. |
+| context     | The actual comparison expression. The structure changes depending on the type of condition selected. The structure for each condition is defined below: <ul><li>metric - Metric Based Condition</li><li>action - Action Based Condition</li><li>team - Team Based Condition</li><li>time - Timed Condition</li><li>var - Formula Based Condition</li></ul>The and and or type of conditions do not have this field. Instead, they have the expressions field, which is an array of these contexts. |
+
 

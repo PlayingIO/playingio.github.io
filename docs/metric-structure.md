@@ -11,7 +11,7 @@ title: Metric Structure
 | description | Brief description of the metric.
 | image       | An image which represents the metric. |
 | type        | Type of the metric: one of point, set, state and compound. |
-| constraints | The constraints on a metric differ depending on what type of metric it is. Refer to the linked sections for each metric type:<br/><ul><li>Point Metric Constraints</li><li>Set Metric Constraints</li><li>State Metric Constraints</li><li>Compound Metric Constraints</li></ul> |
+| constraints | The constraints on a metric differ depending on what type of metric it is. Refer to the linked sections for each metric type:<ul><li>Point Metric Constraints</li><li>Set Metric Constraints</li><li>State Metric Constraints</li><li>Compound Metric Constraints</li></ul> |
 | tags        | Array of strings which can be used when querying to get all designs based on certain tags specified |
 
 
