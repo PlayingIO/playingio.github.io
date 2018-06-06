@@ -85,3 +85,12 @@ You can also define conditions which become true only when triggered on a partic
 | operator    | Can be one of the relational operators: **eq**, **ne**, **gt**, **ge**, **lt**, **le**. |
 | value       | The count of the unit to be counted chosen in the func field. For example, for day of week, the value will represent day, and sensible values will be an integer between 1 to 7, both included. |
 
+#### Formula Based Condition
+
+You can also setup equations with two sides, a left-hand expression (LHS), a right-hand expression (RHS) and an operator. Whenever the equation is satisfied, the condition becomes truthy.
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| lhs         | An arithmetic expression, which can use other metrics or variables defined within the custom rules as components. An example:  $scores.health + $vars.run_length |
+| operator    | Can be one of the relational operators: **eq**, **ne**, **gt**, **ge**, **lt**, **le**. |
+| rhs         | Another arithmetic expression, same as the lhs. |
