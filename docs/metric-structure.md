@@ -61,3 +61,92 @@ title: Metric Structure
 |    Field    |    Description    |
 |-------------|-------------------|
 | formula     | The formula which is evaluated to get the metric's value. |
+
+
+## Examples
+
+### Point Metric
+
+```json
+{
+  "name": "Experience",
+  "id": "experience",
+  "type": "point",
+  "description": "My Players experience within the game",
+  "constraints": {
+    "default": "10",
+    "max": "5000",
+    "min": "10"
+  },
+  "tags": ["course_1", "game"]
+}
+```
+
+### Set Metric
+
+```json
+{
+  "name": "Badges",
+  "id": "badges",
+  "type": "set",
+  "description": "My Players will get these badges",
+  "constraints": {
+    "items": [
+      {
+        "name": "Rookie",
+        "description": "Just Starting"
+      },
+      {
+        "name": "Trainee",
+        "description": "Just Training"
+      },
+      {
+        "name": "Teacher",
+        "description": "Teaches Others"
+      }
+    ],
+    "max_items": "Infinity"
+  }
+}
+```
+
+### State Metric
+
+```json
+{
+  "name": "Levels",
+  "id": "levels",
+  "type": "state",
+  "description": "The level my player is currently in",
+  "constraints": {
+    "states": [
+      {
+        "name": "Beginner",
+        "description": ""
+      },
+      {
+        "name": "Medium",
+        "description": ""
+      },
+      {
+        "name": "Advanced",
+        "description": ""
+      }
+    ]
+  }
+}
+```
+
+### Compound Metric
+
+```json
+{
+  "name": "Karma",
+  "id": "karma",
+  "type": "compound",
+  "description": "The Karma points a player has",
+  "constraints": {
+    "formula": "$scores['experience'] * 10"
+  }
+}
+```
