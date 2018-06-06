@@ -37,9 +37,20 @@ This allows certain checks to be performed to make sure a player can actually se
 
 |    Field    |    Description    |
 |-------------|-------------------|
-| type        | The type of condition. It can be one of metric, action, team, and, or. |
+| type        | The type of condition. It can be one of **metric**, **action**, **team**, **and**, **or**. |
 | not         | If true, inverts the condition. So any check which would usually evaluate to true will now evaluate to false. |
 | expression  | An array of contexts joined with an AND or OR operator. This field is only applicable if the condition type is and or or, and replaces the context field. |
-| context     | The actual comparison expression. The structure changes depending on the type of condition selected. The structure for each condition is defined below: <ul><li>metric - Metric Based Condition</li><li>action - Action Based Condition</li><li>team - Team Based Condition</li><li>time - Timed Condition</li><li>var - Formula Based Condition</li></ul>The and and or type of conditions do not have this field. Instead, they have the expressions field, which is an array of these contexts. |
+| context     | The actual comparison expression. The structure changes depending on the type of condition selected. The structure for each condition is defined below: <ul><li>**metric** - Metric Based Condition</li><li>**action** - Action Based Condition</li><li>**team** - Team Based Condition</li><li>**time** - Timed Condition</li><li>**var** - Formula Based Condition</li></ul>The **and** and **or** type of conditions do not have this field. Instead, they have the expressions field, which is an array of these contexts. |
 
 
+#### Metric Based Condition
+
+Condition which depends on a player's score for a particular metric
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| id          | ID of the metric. |
+| type        | Type of the metric being used for comparison. <br/>For set metrics, there is an additional item field which denotes the set item |
+| item        | The set item whose value will be compared. <br/>This field is only available if the metric type is set. |
+| operator    | Can be one of the relational operators: <ul><li>**eq** (equal to),</li><li>**ne** (not equal to),</li><li>**gt** (greater than),</li><li>**ge** (greater than or equal to),</li><li>**lt** (less than),</li><li>**le** (less than or equal to)</li></ul> |
+| value       | The value of the metric that the player should have on his scores. |
