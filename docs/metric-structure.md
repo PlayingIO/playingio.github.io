@@ -37,3 +37,18 @@ title: Metric Structure
 | max         | Maximum count of the item a player can get. |
 | hidden      | Hidden set items will not show up in player profiles if they are not earned. Items can be marked as hidden for surprise/hidden rewards. |
 
+### State Metric Constraints
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| states      | An array of individual states in the metric. Click here to see the properties each state item can have. |
+
+### State Item Properties
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| name        | Name of the state. |
+| description | A brief description of the state. |
+| image       | An image that represents the state. |
+| max         | Maximum count of the item a player can get. |
+| hidden      | Hidden set items will not show up in player profiles if they are not earned. Items can be marked as hidden for surprise/hidden rewards. |
