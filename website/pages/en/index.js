@@ -100,19 +100,43 @@ const Block = props => (
 );
 
 const Features = props => (
-  <Block layout="fourColumn">
+  <Block layout="threeColumn">
     {[
       {
-        content: 'This is the content of my feature',
+        content: 'Make your application fun and addictive',
         image: imgUrl('docusaurus.svg'),
         imageAlign: 'top',
-        title: 'Feature One',
+        title: 'Gamification',
       },
       {
-        content: 'The content of my second feature',
+        content: 'Ready to use microservices for rapid building',
         image: imgUrl('docusaurus.svg'),
         imageAlign: 'top',
-        title: 'Feature Two',
+        title: 'Microservice',
+      },
+      {
+        content: 'Build decentralized services across the internet',
+        image: imgUrl('docusaurus.svg'),
+        imageAlign: 'top',
+        title: 'Blockchain',
+      },
+      {
+        content: 'Direct user\'s behaviors with hooked cycles',
+        image: imgUrl('docusaurus.svg'),
+        imageAlign: 'top',
+        title: 'Behavior-driven',
+      },
+      {
+        content: 'Analyze and manage your data with powerful dashboard',
+        image: imgUrl('docusaurus.svg'),
+        imageAlign: 'top',
+        title: 'Data-driven',
+      },
+      {
+        content: 'Create intelligent application with Deep-Learning technology',
+        image: imgUrl('docusaurus.svg'),
+        imageAlign: 'top',
+        title: 'AI-driven',
       },
     ]}
   </Block>
