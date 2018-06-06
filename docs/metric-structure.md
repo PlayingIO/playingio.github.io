@@ -14,6 +14,7 @@ title: Metric Structure
 | constraints | The constraints on a metric differ depending on what type of metric it is. Refer to the linked sections for each metric type:<br/><ul><li>Point Metric Constraints</li><li>Set Metric Constraints</li><li>State Metric Constraints</li><li>Compound Metric Constraints</li></ul> |
 | tags        | Array of strings which can be used when querying to get all designs based on certain tags specified |
 
+
 ### Point Metric Constraints
 
 |    Field    |    Description    |
@@ -21,6 +22,7 @@ title: Metric Structure
 | min         | The minimum value the point metric can have. |
 | max         | The maximum value the point metric can have. |
 | default     | The value which will be used in calculations if this metric is not already set on the player. |
+
 
 ### Set Metric Constraints
 |    Field    |    Description    |
@@ -37,13 +39,14 @@ title: Metric Structure
 | max         | Maximum count of the item a player can get. |
 | hidden      | Hidden set items will not show up in player profiles if they are not earned. Items can be marked as hidden for surprise/hidden rewards. |
 
+
 ### State Metric Constraints
 
 |    Field    |    Description    |
 |-------------|-------------------|
 | states      | An array of individual states in the metric. Click here to see the properties each state item can have. |
 
-### State Item Properties
+#### State Item Properties
 
 |    Field    |    Description    |
 |-------------|-------------------|
@@ -52,3 +55,9 @@ title: Metric Structure
 | image       | An image that represents the state. |
 | max         | Maximum count of the item a player can get. |
 | hidden      | Hidden set items will not show up in player profiles if they are not earned. Items can be marked as hidden for surprise/hidden rewards. |
+
+
+### Compound Metric Constraints
+|    Field    |    Description    |
+|-------------|-------------------|
+| formula     | The formula which is evaluated to get the metric's value. |
