@@ -22,3 +22,11 @@ The rules that would be evaluated to give rewards to the player. This is an arra
 | rewards     | The set of metrics that a player gets when he finishes this action. This is a an array consisting of one or more Rewards. |
 | requires    | These are the conditions which are checked to see if the player is suitable to get this reward. For more information on requires, see the Requires Structure below. |
 
+### Reward Structure
+|    Field    |    Description    |
+|-------------|-------------------|
+| metric      | The metric which will be used for the reward. This is an object with two fields:</br><ul><li>type: the type of the metric</li><li>id: The ID of the metric</li><ul> |
+| verb        | Defines which operation is performed for this reward. Can be one of add, remove, set.
+| value       | The value by which the player's score changes. |
+| probabilty  | The chance that this reward in an action or process task can be given must be within [0, 1] range. |
+
