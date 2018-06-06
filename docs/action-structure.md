@@ -74,3 +74,14 @@ Condition which depends on how many times an action has been performed.
 | definition  | Definition ID of the team which the player should be a part of. |
 | role        | The role the player should have within the team of this type. If you don't care about the role, then you can ignore this field. |
 
+
+#### Timed Condition
+
+You can also define conditions which become true only when triggered on a particular time.
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| func        | The time unit to be counted, against a fixed duration. The available choices are: <ul><li>hour_of_day</li><li>day_of_week</li><li>day_of_month</li><li>day_of_year</li><li>week_of_year</li><li>month_of_year</li></ul> |
+| operator    | Can be one of the relational operators: **eq**, **ne**, **gt**, **ge**, **lt**, **le**. |
+| value       | The count of the unit to be counted chosen in the func field. For example, for day of week, the value will represent day, and sensible values will be an integer between 1 to 7, both included. |
+
