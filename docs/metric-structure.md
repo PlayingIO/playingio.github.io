@@ -20,5 +20,20 @@ title: Metric Structure
 |-------------|-------------------|
 | min         | The minimum value the point metric can have. |
 | max         | The maximum value the point metric can have. |
-| default      | The value which will be used in calculations if this metric is not already set on the player. |
+| default     | The value which will be used in calculations if this metric is not already set on the player. |
+
+### Set Metric Constraints
+|    Field    |    Description    |
+|-------------|-------------------|
+| max_items   | The maximum number of unique items of the set that a player can have. |
+| items       | An array of individual items in the set. Click here to see the properties each item can have. |
+
+#### Set Item Properties
+|    Field    |    Description    |
+|-------------|-------------------|
+| name        | Name of the item. |
+| description | A brief description of the item. |
+| image       | An image that represents the item. |
+| max         | Maximum count of the item a player can get. |
+| hidden      | Hidden set items will not show up in player profiles if they are not earned. Items can be marked as hidden for surprise/hidden rewards. |
 
