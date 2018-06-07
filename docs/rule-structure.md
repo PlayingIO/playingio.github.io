@@ -41,6 +41,7 @@ All rules have these common fields. Extra fields are required depending on what 
 | level_metric| This is the id of the state metric which will supply the list of states to be used as levels. |
 | levels      | This is an array of items, each item having one state item (from the level_metric) and the maximum threshold (base_metric) when that state item is applied to players. |
 
+
 ### Level Rule Item Structure
 
 |    Field    |    Description    |
@@ -48,6 +49,27 @@ All rules have these common fields. Extra fields are required depending on what 
 | rank        | The name of the state you would like to assign. |
 | threshold   | The max value of the base_metric (upper threshold) that is required by the player to gain this level. The lower threshold for each is determined as one more than the previous level's threshold. The lower threshold for the first level is hard-coded to -Infinity. |
 
+### Example
+
+```json
+{
+  "name": "Boost Levels",
+  "id": "boost",
+  "description": "The levels a player can rise up to based on experience",
+  "type": "level",
+  "base_metric": "experience",
+  "level_metric": "levels",
+  "levels": [
+    {
+      "rank": "Level 1",
+      "threshold": "15"
+    },
+    {
+      "rank": "Level 2" // if no threshold is specified it goes till Infinity
+    }
+  ]
+}
+```
 
 ## Custom Rule Structure
 
