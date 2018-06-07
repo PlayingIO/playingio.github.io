@@ -36,3 +36,11 @@ The design structure is what is used when you are making the mission.
 | max_active_player_instances | The maximum number of active mission instances that a player can create from this mission. |
 | requires. | A set of conditions, which will determine if the player can see this definition in the game or not. For more information on requires, see the [Requires Structure](requires-structure.md). |
 
+
+### Lanes Structure
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| name        | The name of the lane. |
+| default     | If true, all players who join an instance of this mission will automatically join this lane. |
+
