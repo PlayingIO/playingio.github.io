@@ -112,7 +112,7 @@ You can also setup equations with two sides, a left-hand expression (LHS), a rig
 | rhs         | Another arithmetic expression, same as the lhs. |
 
 
-##  All Conditions: and
+## All Conditions: and
 
 An and condition, which is shown as All of the following rules can be used to join two or more conditions such that the whole condition will be true only when all of the child conditions are true.
 
@@ -129,3 +129,19 @@ Example:
 }
 ```
 
+## Any Condition: or
+
+An or condition, which is shown as Any of the following rules can be used to join two or more conditions such that the whole condition will be true even if only one of the child conditions become true.
+
+Example:
+
+```json
+{
+  "requires": {
+    "type": "or",
+    "expression": [
+      // two or more conditions
+    ]
+  }
+}
+```
