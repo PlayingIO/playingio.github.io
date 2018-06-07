@@ -60,3 +60,15 @@ Activities are the tasks or sub-missions within a mission. They can have rewards
 | requires    | The requirements for performing the task. |
 | probability | Chance that the player will get any of the rewards on completing the task. |
 
+
+### Gateway Structure
+
+Gateways are used to restrict access to certain tasks and sub-missions based on the mission state. They cannot have rewards on them.
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| id          | A unique ID for the gateway. |
+| name        | Name of the gateway. |
+| type        | The gateway can be either parallel or exclusive. |
+| lane        | The lane in which the activity belongs to. |
+
