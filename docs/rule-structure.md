@@ -22,7 +22,7 @@ All rules have these common fields. Extra fields are required depending on what 
 |-------------|-------------------|
 | metric      | This is the set metric a player will achieve if he statifies the requirements. |
 | items       | The items of the set metric that the player will gain. Each item will contain the properties. |
-| requires    | A set of conditions, based on which the achievement will be awarded to players. Click to see [structure of condition](requires-structure.md). |
+| requires    | A set of conditions, based on which the achievement will be awarded to players. For more information on requires, see the [Requires Structure](requires-structure.md). |
 
 
 #### Achievement Item Structure
@@ -47,3 +47,15 @@ All rules have these common fields. Extra fields are required depending on what 
 |-------------|-------------------|
 | rank        | The name of the state you would like to assign. |
 | threshold   | The max value of the base_metric (upper threshold) that is required by the player to gain this level. The lower threshold for each is determined as one more than the previous level's threshold. The lower threshold for the first level is hard-coded to -Infinity. |
+
+
+## Custom Rule Structure
+
+### Rules
+
+The rules that would be evaluated to give rewards to the player. This is an array consisting of objects with the fields rewards and requires.
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| rewards     | The set of metrics that a player gets when he finishes this action. This is a an array consisting of one or more rewards. For more information on rewards, see the [Rewards Structure](rewards-structure.md). |
+| requires    | These are the conditions which are checked to see if the player is suitable to get this reward. For more information on requires, see the [Requires Structure](requires-structure.md). |
