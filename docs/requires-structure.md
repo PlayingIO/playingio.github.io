@@ -52,6 +52,20 @@ Condition which depends on how many times an action has been performed.
 | operator    | Can be one of the relational operators: **eq**, **ne**, **gt**, **ge**, **lt**, **le**. |
 | value       | The number of times the action should be executed by the player. |
 
+Example:
+
+```json
+{
+  "requires": {
+    "type": "action",
+    "context": {
+      "id": "login",
+      "operator": "eq",
+      "value": "15"
+    }
+  }
+}
+```
 
 #### Team Based Condition
 
