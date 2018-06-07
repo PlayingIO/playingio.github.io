@@ -20,10 +20,27 @@ Condition which depends on a player's score for a particular metric
 |    Field    |    Description    |
 |-------------|-------------------|
 | id          | ID of the metric. |
-| type        | Type of the metric being used for comparison. <br/>For set metrics, there is an additional item field which denotes the set item |
+| type        | Type of the metric being used for comparison. <br/>For **set** metrics, there is an additional item field which denotes the set item |
 | item        | The set item whose value will be compared. <br/>This field is only available if the metric type is set. |
 | operator    | Can be one of the relational operators: <ul><li>**eq** (equal to),</li><li>**ne** (not equal to),</li><li>**gt** (greater than),</li><li>**ge** (greater than or equal to),</li><li>**lt** (less than),</li><li>**le** (less than or equal to)</li></ul> |
 | value       | The value of the metric that the player should have on his scores. |
+
+Example:
+
+```json
+{
+  "requires": {
+    "type": "metric",
+    "not": false,
+    "context": {
+      "id": "exp",
+      "type": "point",
+      "operator": "eq",
+      "value": "55"
+    }
+  }
+}
+```
 
 #### Action Based Condition
 
