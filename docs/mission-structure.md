@@ -44,3 +44,19 @@ The design structure is what is used when you are making the mission.
 | name        | The name of the lane. |
 | default     | If true, all players who join an instance of this mission will automatically join this lane. |
 
+
+### Activity Structure
+
+Activities are the tasks or sub-missions within a mission. They can have rewards attached to them.
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| id          | A unique ID for the activity. |
+| name        | Name of the activity. |
+| type        | Whether the activity is a task or a sub-mission. |
+| lane        | The lane in which the activity belongs to. |
+| loop        | Number of times a player can perform this task. <br />If loop is not set, the player can perform the task once.<br /> If loop is set to 10, the player can perform the task 11 times. |
+| rewards     | The rewards which the player can earn upon completing this task. |
+| requires    | The requirements for performing the task. |
+| probability | Chance that the player will get any of the rewards on completing the task. |
+
