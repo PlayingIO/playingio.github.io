@@ -32,6 +32,33 @@ All rules have these common fields. Extra fields are required depending on what 
 | key         | The name of the set item. |
 | value       | Number of this item the player would gain. |
 
+### Example
+
+```json
+
+  "name": "World Achievements",
+  "id": "world_achivements",
+  "description": "The achievements the player can gain within the world",
+  "type": "achievement",
+  "metric": {
+    "id": "badges"
+  },
+  "items": [
+    {
+      "key": "Camper",
+      "value": "1"
+    }
+  ],
+  "requires": {
+    "type": "action",
+    "context": {
+      "id": "login",
+      "operator": "eq",
+      "value": "15"
+    }
+  }
+}
+```
 
 ## Level Rule Structure
 
