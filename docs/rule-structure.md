@@ -108,3 +108,37 @@ The rules that would be evaluated to give rewards to the player. This is an arra
 |-------------|-------------------|
 | rewards     | The set of metrics that a player gets when he finishes this action. This is a an array consisting of one or more rewards. For more information on rewards, see the [Rewards Structure](rewards-structure.md). |
 | requires    | These are the conditions which are checked to see if the player is suitable to get this reward. For more information on requires, see the [Requires Structure](requires-structure.md). |
+
+### Example
+
+```json
+{
+  "name": "Course Rule",
+  "id": "course_rule",
+  "description": "This rule is excuted when a player completes a course",
+  "type": "custom",
+  "rules": [
+    {
+      "rewards": [
+        {
+          "metric": {
+            "id": "experience",
+            "type": "point"
+          },
+          "verb": "add",
+          "value": "10"
+        }
+      ],
+      "requires": {}
+    }
+  ],
+  "variables": [
+    {
+      "name": "score",
+      "type": "int",
+      "required": true,
+      "default": 0
+    }
+  ]
+}
+```
