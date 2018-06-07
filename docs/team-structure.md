@@ -24,3 +24,61 @@ title: Team Structure
 | max_players | The maximum number of players that any instances of this type can contain. |
 | public      | If false, the team definition will only be available to the game admins. Only the game admin can create an instance of the definition.<br />If true, the availability of the definition will be controlled by the requires key. If the requires key is not set, then it will be available to everyone within the game. |
 | requires    | The requirements for creation of an instance from this definition. Only the players who satisfy the requirements can create this type of team. For more information on requires, see the [Requires Structure](requires-structure.md). |
+
+## Example
+
+### Team
+
+```json
+{
+  "name": "Managers",
+  "id": "managers",
+  "description": "This is the team for all managers",
+  "permissions": [
+    ["Starter", {"lock": true, "assign": true}],
+    ["Admin", {"lock": true, "assign": true, "peer": true, "leave": true }]
+  ],
+  "creator_roles": ["Admin"],
+  "settings": {
+    "access": ["PUBLIC"],
+    "max_global_instances": "Infinity",
+    "max_player_instances": "Infinity",
+    "max_players": "Infinity",
+    "public": true,
+    "requires": {}
+  }
+}
+```
+
+### Team with Creation Requirements
+
+```json
+
+  "name": "Moderators",
+  "id": "moderators",
+  "description": "This is the team for all managers",
+  "permissions": [
+    ["Forum Moderator", {"lock": true, assign: true}],
+    ["Chat Moderator", {"lock": true, "assign": true}],
+    ["Admin", {"lock": true, "assign": true, "peer": true, "leave": true }]
+  ],
+  "creator_roles": ["Admin"],
+  "settings": {
+    "access": ["PUBLIC"],
+    "max_global_instances": "Infinity",
+    "max_player_instances": "Infinity",
+    "max_players": "Infinity",
+    "public": true,
+    "requires": {
+      "type": "metric",
+      "not": false,
+      "context": {
+        "id": "levels",
+        "type": "state",
+        "operator": "eq",
+        "value": "Level 3"
+      }
+    }
+  }
+}
+```
