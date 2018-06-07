@@ -72,3 +72,14 @@ Gateways are used to restrict access to certain tasks and sub-missions based on 
 | type        | The gateway can be either parallel or exclusive. |
 | lane        | The lane in which the activity belongs to. |
 
+
+### Sequence Flow Structure
+
+Sequence flows are lightweight objects which connect other nodes (activities, gateways) to each other. Each sequence flow has a source node and a target node.
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| src         | The node from which the sequence flow originates. |
+| target      | The node to which the sequence flow ends. |
+| retry       | If set to true, the player can retry a task if he fails. Default is false. |
+| lane        | The lane in which the activity belongs to. |
