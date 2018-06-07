@@ -28,7 +28,7 @@ title: Metric Structure
 |    Field    |    Description    |
 |-------------|-------------------|
 | max_items   | The maximum number of unique items of the set that a player can have. |
-| items       | An array of individual items in the set. Click here to see the properties each item can have. |
+| items       | An array of individual items in the set. |
 
 ### Set Item Properties
 |    Field    |    Description    |
@@ -44,7 +44,7 @@ title: Metric Structure
 
 |    Field    |    Description    |
 |-------------|-------------------|
-| states      | An array of individual states in the metric. Click here to see the properties each state item can have. |
+| states      | An array of individual states in the metric. |
 
 ### State Item Properties
 

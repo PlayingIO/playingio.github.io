@@ -21,5 +21,5 @@ This is an array consisting of objects with the fields rewards and requires.
 
 |    Field    |    Description    |
 |-------------|-------------------|
-| rewards     | The set of metrics that a player gets when he finishes this action. This is a an array consisting of one or more Rewards. Click to see [structure of reward](rewards-structure.md). |
-| requires    | These are the conditions which are checked to see if the player is suitable to get this reward. For more information on requires, see the Requires Structure below. Click to see [structure of condition](requires-structure.md). |
+| rewards     | The set of metrics that a player gets when he finishes this action. This is a an array consisting of one or more rewards. For more information on rewards, see the [Rewards Structure](rewards-structure.md). |
+| requires    | These are the conditions which are checked to see if the player is suitable to get this reward. For more information on requires, see the [Requires Structure](requires-structure.md). |
