@@ -24,3 +24,15 @@ The design structure is what is used when you are making the mission.
 | lanes       | Lanes can be used to retrict players to a particular task/tasks. Each lane has a structure described in the Lane Structure section below |
 | id          | A unique ID for the mission. |
 
+
+### Settings Structure
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| access      | The access settings with which the mission instance can be created. It is an array which can contain any or all of these PUBLIC, PROTECTED, PRIVATE. When players create an instance of this mission, they get the chance to choosing only one of the access settings you set in the array. |
+| max_global_instances | The maximun number of mission instances that can be created from this mission. |
+| max_active_global_instances | The maximun number of active mission instances that can be created from this mission. |
+| max_player_instances | The maximum number of mission instances that a player can create from this mission. |
+| max_active_player_instances | The maximum number of active mission instances that a player can create from this mission. |
+| requires. | A set of conditions, which will determine if the player can see this definition in the game or not. For more information on requires, see the [Requires Structure](requires-structure.md). |
+
