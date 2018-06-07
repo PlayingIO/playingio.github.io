@@ -94,3 +94,15 @@ You can also setup equations with two sides, a left-hand expression (LHS), a rig
 | lhs         | An arithmetic expression, which can use other metrics or variables defined within the custom rules as components. An example:  $scores.health + $vars.run_length |
 | operator    | Can be one of the relational operators: **eq**, **ne**, **gt**, **ge**, **lt**, **le**. |
 | rhs         | Another arithmetic expression, same as the lhs. |
+
+
+## Variables
+
+Variables allow users to input dynamic contents for evaluating rules when an action is performed. Each variable has the following properties:
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| name        | The name of the variable. |
+| type        | This is the type of the variable it can be a number or a string. |
+| required    | Whether the variable is required when the player performs this action. |
+| default     | The default value of the variable, which is applied only if the required property is not set. |
