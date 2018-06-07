@@ -21,7 +21,10 @@
       "team-structure",
       "mission-structure",
       "rule-structure",
-      "leaderboard-structure"
+      "leaderboard-structure",
+      "requires-structure",
+      "rewards-structure",
+      "variables-structure"
     ]
   }
 }
