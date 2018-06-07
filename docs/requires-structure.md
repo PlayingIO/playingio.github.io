@@ -76,6 +76,20 @@ Condition which depends on how many times an action has been performed.
 | definition  | Definition ID of the team which the player should be a part of. |
 | role        | The role the player should have within the team of this type. If you don't care about the role, then you can ignore this field. |
 
+Example:
+
+```json
+{
+  "requires": {
+    "type": "team",
+    "not": false,
+    "context": {
+      "definition_id": "disciples",
+      "role": "student" // optional if the player can have any role
+    }
+  }
+}
+```
 
 #### Timed Condition
 
@@ -96,15 +110,3 @@ You can also setup equations with two sides, a left-hand expression (LHS), a rig
 | lhs         | An arithmetic expression, which can use other metrics or variables defined within the custom rules as components. An example:  $scores.health + $vars.run_length |
 | operator    | Can be one of the relational operators: **eq**, **ne**, **gt**, **ge**, **lt**, **le**. |
 | rhs         | Another arithmetic expression, same as the lhs. |
-
-
-## Variables
-
-Variables allow users to input dynamic contents for evaluating rules when an action is performed. Each variable has the following properties:
-
-|    Field    |    Description    |
-|-------------|-------------------|
-| name        | The name of the variable. |
-| type        | This is the type of the variable it can be a number or a string. |
-| required    | Whether the variable is required when the player performs this action. |
-| default     | The default value of the variable, which is applied only if the required property is not set. |
