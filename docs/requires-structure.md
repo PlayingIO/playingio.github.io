@@ -13,7 +13,7 @@ This allows certain checks to be performed to make sure a player can actually se
 | expression  | An array of contexts joined with an AND or OR operator. This field is only applicable if the condition type is and or or, and replaces the context field. |
 | context     | The actual comparison expression. The structure changes depending on the type of condition selected. The structure for each condition is defined below: <ul><li>**metric** - Metric Based Condition</li><li>**action** - Action Based Condition</li><li>**team** - Team Based Condition</li><li>**time** - Timed Condition</li><li>**var** - Formula Based Condition</li></ul>The **and** and **or** type of conditions do not have this field. Instead, they have the expressions field, which is an array of these contexts. |
 
-#### Metric Based Condition
+## Metric Based Condition
 
 Condition which depends on a player's score for a particular metric
 
@@ -42,7 +42,7 @@ Example:
 }
 ```
 
-#### Action Based Condition
+## Action Based Condition
 
 Condition which depends on how many times an action has been performed.
 
@@ -67,7 +67,7 @@ Example:
 }
 ```
 
-#### Team Based Condition
+## Team Based Condition
 
 Condition which depends on how many times an action has been performed.
 
@@ -91,7 +91,7 @@ Example:
 }
 ```
 
-#### Timed Condition
+## Timed Condition
 
 You can also define conditions which become true only when triggered on a particular time.
 
@@ -101,7 +101,7 @@ You can also define conditions which become true only when triggered on a partic
 | operator    | Can be one of the relational operators: **eq**, **ne**, **gt**, **ge**, **lt**, **le**. |
 | value       | The count of the unit to be counted chosen in the func field. For example, for day of week, the value will represent day, and sensible values will be an integer between 1 to 7, both included. |
 
-#### Formula Based Condition
+## Formula Based Condition
 
 You can also setup equations with two sides, a left-hand expression (LHS), a right-hand expression (RHS) and an operator. Whenever the equation is satisfied, the condition becomes truthy.
 
@@ -110,3 +110,22 @@ You can also setup equations with two sides, a left-hand expression (LHS), a rig
 | lhs         | An arithmetic expression, which can use other metrics or variables defined within the custom rules as components. An example:  $scores.health + $vars.run_length |
 | operator    | Can be one of the relational operators: **eq**, **ne**, **gt**, **ge**, **lt**, **le**. |
 | rhs         | Another arithmetic expression, same as the lhs. |
+
+
+##  All Conditions: and
+
+An and condition, which is shown as All of the following rules can be used to join two or more conditions such that the whole condition will be true only when all of the child conditions are true.
+
+Example:
+
+```json
+{
+  "requires": {
+    "type": "and",
+    "expression": [
+      // two or more conditions
+    ]
+  }
+}
+```
+
