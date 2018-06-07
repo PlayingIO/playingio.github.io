@@ -24,3 +24,10 @@ All rules have these common fields. Extra fields are required depending on what 
 | requires    | A set of conditions, based on which the achievement will be awarded to players. Click here to see the condition structure. |
 
 
+#### Achievement Item Structure
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| key         | The name of the set item. |
+| value       | Number of this item the player would gain. |
+
