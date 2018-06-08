@@ -16,3 +16,44 @@ title: Leaderboard Structure
 | cycles      | Leaderboard cycles are the interval in which the leaderboard is reset. Your leaderboard design can have more than one cycles. There are 5 possible cycles:<ul><li>alltime: Leaderboards are never reset.</li><li>yearly: The current leaderboard is reset at the start of every year.</li><li>monthly: The current leaderboard is reset at the start of every month.</li><li>weekly: The current leaderboard is reset on every Sunday.</li><li>daily: The current leaderboard is reset at midnight GMT.</li></ul>When you are finally reading the leaderboard (in your game), you'd pass only one of the selected cycles in your request. |
 | requires    | The visibility requirements for the leaderboard. Only the players who satisfy the requirements can view the leaderboard. For more information on requires, see the [Requires Structure]. |
 | tags        | Array of strings which can be used when querying to get all designs based on certain tags specified |
+
+## Examples
+
+* Game Scope Leaderboard
+
+```json
+{
+  "name": "Game Leaders",
+  "id": "game_leaders",
+  "type": "regular",
+  "description": "This leaderboard will display top players within the game",
+  "entity_type": "players",
+  "scope": {
+    "type": "game"
+  },
+  "metric": {
+    "id": "knowledge",
+    "type": "knowledge"
+  }
+}
+```
+
+* Team Instance Scope Leaderboard
+
+```json
+{
+  "name": "Team Leaders",
+  "id": "team_leaders",
+  "type": "regular",
+  "entity_type": "players",
+  "description": "This leaderboard will display top players within the team",
+  "scope": {
+    "type": "team_instance",
+    "id": "regional"
+  },
+  "metric": {
+    "id": "knowledge",
+    "type": "knowledge"
+  }
+}
+```
