@@ -465,3 +465,44 @@ Get the list of pending invitations to join teams/processes for the player.
 }
 ```
 
+## Accept an Invitation
+
+```
+POST /users/me/invites/:invite_id
+```
+
+Accept an invitation to join a process or a team.
+
+#### Response
+
+```json
+{
+  "event": "invite",
+  "process": {
+    "id": "gandalf/lotr",
+    "name": "lotr"
+  },
+  "actor": {
+    "id": "gandalf",
+    "alias": "Gandalf The Grey"
+  },
+  "invitee": {
+    "id": "legolas",
+    "alias": "Legolas!"
+  },
+  "roles": {
+    "gondor": "player"
+  },
+  "state": "ACCEPTED",
+  "timestamp": "2014-08-20T05:43:30.062Z",
+  "id": "53120aea188101a72a668a5e",
+  "accepted_at": "2014-03-21T09:24:34.157Z"
+}
+```
+
+#### Errors
+
+```
+404 invalid_invite: Thrown when an invalid invite key is provided.
+401 team_locked: Thrown when the team is locked.
+```
