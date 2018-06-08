@@ -84,7 +84,139 @@ Sequence flows are lightweight objects which connect other nodes (activities, ga
 | retry       | If set to true, the player can retry a task if he fails. Default is false. |
 | lane        | The lane in which the activity belongs to. |
 
+### Example
 
+* Mission
+
+```json
+{
+  "name": "Learning",
+  "id": "learning",
+  "description": "The Mission of learning",
+  "lanes": [
+    {
+      "name": "Main",
+      "default": true
+    }
+  ],
+  "activities": [
+    {
+      "id": "study",
+      "name": "study",
+      "lane": "Main",
+      "type": "task",
+      "loop": "0",
+      "rewards": []
+    },
+    {
+      "id": "practice",
+      "name": "practice",
+      "lane": "Main",
+      "type": "task",
+      "loop": "0",
+      "rewards": []
+    }
+  ],
+  "gateways": [],
+  "sequence_flows": [
+    {
+      "src": "study",
+      "tgt": "practice",
+      "retry": true
+    }
+  ],
+  "settings": {
+    "access": ["PUBLIC"],
+    "max_global_instances": "Infinity",
+    "max_active_global_instances": "Infinity",
+    "max_player_instances": "Infinity",
+    "max_active_player_instances": "Infinity",
+    "requires": {}
+  },
+  "conditions": []
+}
+```
+
+* Mission with Submissions
+
+```json
+{
+  "name": "Learning",
+  "id": "learning",
+  "description": "The Mission of learning",
+  "lanes": [
+    {
+      "name": "Main",
+      "default": true
+    }
+  ],
+  "activities": [
+    {
+      "id": "study",
+      "name": "study",
+      "lane": "Main",
+      "type": "sub_mission",
+      "loop": "0",
+      "rewards": [],
+      "activities": [
+        {
+          "id": "get_books",
+          "name": "get_books",
+          "lane": "Main",
+          "type": "task",
+          "loop": "0",
+        },
+        {
+          "id": "read_books",
+          "name": "read_books",
+          "lane": "Main",
+          "type": "task",
+          "loop": "0",
+        },
+        {
+          "id": "make_notes",
+          "name": "make_notes",
+          "lane": "Main",
+          "type": "task",
+          "loop": "0",
+        }
+      ],
+      "sequence_flows": [
+        {
+          "src": "get_books",
+          "tgt": "read_books",
+          "retry": true
+        },
+        {
+          "src": "read_books",
+          "tgt": "make_notes",
+          "retry": true
+        }
+      ],
+      "gateways": []
+    },
+    {
+      "id": "practice",
+      "name": "practice",
+      "lane": "Main",
+      "type": "task",
+      "loop": "0",
+      "rewards": []
+    }
+  ],
+  "gateways": [],
+  "sequence_flows": [],
+  "settings": {
+    "access": ["PUBLIC"],
+    "max_global_instances": "Infinity",
+    "max_active_global_instances": "Infinity",
+    "max_player_instances": "Infinity",
+    "max_active_player_instances": "Infinity",
+    "requires": {}
+  },
+  "conditions": []
+}
+```
 
 ## Mission Instance Structure
 
