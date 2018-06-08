@@ -4,8 +4,9 @@ title: What & Why
 
 ## What is Playing I/O Platform?
 
-Playing I/O is a platform as serivce for building playful applications.
+Playing I/O is a platform as serivce which empowers anyone to design and implement a playful applications. Our vision at Playing I/O is to make gamification into a practical tool which can be used to bring about positive change within a group or an individual.
 
+This platform allows a normal user to convert a gamified system's design into a fully functional web-application complete with teams, real-time notifications, leaderboards and many more features.
 
 ## Why Should I Use Playing I/O Platform
 
