@@ -83,3 +83,16 @@ Sequence flows are lightweight objects which connect other nodes (activities, ga
 | target      | The node to which the sequence flow ends. |
 | retry       | If set to true, the player can retry a task if he fails. Default is false. |
 | lane        | The lane in which the activity belongs to. |
+
+
+
+## Mission Instance Structure
+
+### Containers
+
+They represent missions or sub-missions. They must contain a field key which must be unique.
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| key         | Represents a path to a mission or a sub-mission. If the key is the mission instance ID then it represents the mission instance container otherwise it represents sub-missions. The key is used to trigger tasks in sub-missions without acutally specifying the full path to the task. |
+| nodes       | These represent all available nodes within the mission or sub-mission. The node can be of 2 types: <ul><li>Task or Sub-Mission</li><li>Gateway</li></ul> |
