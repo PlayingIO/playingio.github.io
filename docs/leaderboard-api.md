@@ -1,3 +1,3 @@
 ---
-title: Leaderboards Service APIs
+title: Leaderboards Service
 ---

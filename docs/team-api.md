@@ -1,3 +1,3 @@
 ---
-title: Teams Service APIs
+title: Teams Service
 ---

@@ -1,3 +1,3 @@
 ---
-title: Metrics Service APIs
+title: Metrics Service
 ---

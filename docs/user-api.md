@@ -1,3 +1,3 @@
 ---
-title: Users Service APIs
+title: Users Service
 ---

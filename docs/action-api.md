@@ -1,3 +1,3 @@
 ---
-title: Actions Service APIs
+title: Actions Service
 ---

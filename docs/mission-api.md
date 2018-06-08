@@ -1,3 +1,2 @@
 ---
-title: Missions Service APIs
----
+title: Missions Service

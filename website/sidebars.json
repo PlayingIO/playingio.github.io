@@ -27,5 +27,16 @@
       "rewards-structure",
       "variables-structure"
     ]
+  },
+  "apis": {
+    "Services": [
+      "api",
+      "user-api",
+      "action-api",
+      "mission-api",
+      "team-api",
+      "metric-api",
+      "leaderboard-api"
+    ]
   }
 }
