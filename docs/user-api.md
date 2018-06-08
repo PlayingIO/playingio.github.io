@@ -155,10 +155,10 @@ By default, last 24 hour activity is returned. A period can be specified by pass
 
 #### Parameters
 
-|   Name    | Description |
-|-----------|-------------|
-| start     | Earliest possible activity time stamp. Unit: UNIX time stamp or ISO time stamp |
-| end       | Latest possible activity time stamp. Unit: UNIX time stamp or ISO time stamp |
+|    Name     |    Description    |
+|-------------|-------------------|
+| start       | Earliest possible activity time stamp. Unit: UNIX time stamp or ISO time stamp |
+| end         | Latest possible activity time stamp. Unit: UNIX time stamp or ISO time stamp |
 
 #### Response
 
@@ -249,3 +249,65 @@ By default, last 24 hour activity is returned. A period can be specified by pass
   }
 ]
 ```
+
+
+## Get Own Notifications
+
+```
+GET /users/me/notifications
+```
+
+Gets the player notifications for a particular period of time.
+
+If no start and end keys are provided, by default, notifications from the last 24 hours will be returned.
+
+Timestamp values must be either ISO or UNIX time stamp.
+
+#### Parameters
+
+|    Name     |    Description    |
+|-------------|-------------------|
+| start       | Earliest possible activity timestamp |
+| end         | Latest possible activity timestamp. |
+
+#### Response
+
+```json
+{
+  "data": [
+    {
+      "id": "052de920-a174-11e3-b581-1b9a3fec215b",
+      "event": "join",
+      "timestamp": "2014-03-02T18:03:59.848Z",
+      "actor": {
+        "id": "neo",
+        "alias": "Neo"
+      },
+      "process": {
+        "id": "matrix",
+        "name": "TheMatrix"
+      },
+      "roles": {
+        "matrix": "player"
+      },
+      "seen": false
+    },
+    {
+      "id": "931dda24-a174-da23-g323-1b9adaec2ds",
+      "event": "leave",
+      "timestamp": "2013-11-10T16:48:10.570Z",
+      "actor": {
+        "id": "keymaker",
+        "alias": "The Key Maker!"
+      },
+      "process": {
+        "id": "matrix",
+        "name": "TheMatrix"
+      },
+      "seen": false
+    }
+  ],
+  "unseen": 2
+}
+```
+
