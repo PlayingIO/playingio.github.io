@@ -155,10 +155,10 @@ By default, last 24 hour activity is returned. A period can be specified by pass
 
 #### Parameters
 
-|   Name   | Type  | Default | Required |   Description   |
-|----------|-------|---------|----------|-----------------|
-| start    | date  |         |          | Earliest possible activity time stamp in ISO format|
-| end      | date  |         |          | Latest possible activity time stamp in ISO format |
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| start    | date   |         |          | Earliest possible activity time stamp in ISO format|
+| end      | date   |         |          | Latest possible activity time stamp in ISO format |
 
 #### Response
 
@@ -265,10 +265,10 @@ Timestamp values must be either ISO or UNIX time stamp.
 
 #### Parameters
 
-|   Name   | Type  | Default | Required |   Description   |
-|----------|-------|---------|----------|-----------------|
-| start    | date  |         |          | Earliest possible activity time stamp in ISO format|
-| end      | date  |         |          | Latest possible activity time stamp in ISO format |
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| start    | date   |         |          | Earliest possible activity time stamp in ISO format|
+| end      | date   |         |          | Latest possible activity time stamp in ISO format |
 
 #### Response
 
@@ -326,9 +326,9 @@ Responds with an object containing 2 keys:
 
 #### Parameters
 
-|   Name   | Type  | Default | Required |   Description   |
-|----------|-------|---------|----------|-----------------|
-| more     | array |         |          | An Array containing the IDs of notifications that are to be marked as read. |
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| more     | array  |         |          | An Array containing the IDs of notifications that are to be marked as read. |
 
 #### Request
 
@@ -351,4 +351,56 @@ Responds with an object containing 2 keys:
 
 ```
 401 Invalid notification id
+```
+
+
+## Get Pending Approvals
+
+```
+GET /user/me/approvals
+```
+
+Get the list of pending approvals to join teams/processes for the player.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| skip     | number | 0       |          | Number of approvals to skip
+| limit    | number | 0       |          | Maximum number of approvals to return
+
+#### Response
+
+```json
+{
+  "data": [
+    {
+      "event": "join:request",
+      "timestamp": "2014-03-01T18:58:22.142Z",
+      "team": {
+        "id": "53122d80188101a72a668a63",
+        "name": "Titans"
+      },
+      "roles": {
+        "God": true
+      },
+      "state": "PENDING",
+      "id": "75d485e0-a173-11e3-b581-1b9a3fec215b"
+    },
+    {
+      "event": "join:request",
+      "timestamp": "2014-03-01T19:02:22.642Z",
+      "process": {
+        "id": "neo/53122e9a188101a72a668a64",
+        "name": "Protected"
+      },
+      "roles": {
+        "~": "player"
+      },
+      "state": "PENDING",
+      "id": "052de920-a174-11e3-b581-1b9a3fec215b"
+    }
+  ],
+  "total": 2
+}
 ```
