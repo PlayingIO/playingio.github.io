@@ -142,3 +142,110 @@ Update the profile information for the current player. The alias and email can o
   ]
 }
 ```
+
+## Get Own Activity Feed
+
+```
+GET /users/me/activities
+```
+
+Returns the player's activity feed.
+
+By default, last 24 hour activity is returned. A period can be specified by passing start and end time stamps as query parameters.
+
+#### Parameters
+
+|   Name    | Description |
+|-----------|-------------|
+| start     | Earliest possible activity time stamp. Unit: UNIX time stamp or ISO time stamp |
+| end       | Latest possible activity time stamp. Unit: UNIX time stamp or ISO time stamp |
+
+#### Response
+
+```json
+[
+  {
+    "event": "create",
+    "timestamp": "2014-03-01T16:23:06.500Z",
+    "process": {
+      "id": "neo/5312096a8e1ebb4550a6a6f6",
+      "name": "The Matrix"
+    },
+    "id": "c5465c41-a15d-11e3-84ab-ebaad0c03951"
+  },
+  {
+    "process": {
+      "id": "neo/5312096b8e1ebb4550a6a6fc",
+      "name": "The Matrix"
+    },
+    "event": "progress",
+    "activity": {
+      "id": "destroy_the_world",
+      "name": "Destroy the World"
+    },
+    "changes": [
+      {
+        "metric": {
+          "id": "existential_plane",
+          "name": "Existential Plane",
+          "type": "state"
+        },
+        "delta": {
+          "old": null,
+          "new": "Hell"
+        }
+      },
+      {
+        "metric": {
+          "id": "karma",
+          "name": "Karma",
+          "type": "point"
+        },
+        "delta": {
+          "old": "0",
+          "new": "-1000000000"
+        }
+      }
+    ],
+    "timestamp": "2014-03-01T16:23:29.367Z",
+    "id": "d2e79670-a15d-11e3-84ae-ebaad0c03951"
+  },
+  {
+    "process": {
+      "id": "neo/5312096b8e1ebb4550a6a6fc",
+      "name": "The Matrix"
+    },
+    "event": "progress",
+    "activity": {
+      "id": "brahmastra",
+      "name": "Brahmastra"
+    },
+    "changes": [
+      {
+        "metric": {
+          "id": "weapons",
+          "name": "Weapons",
+          "type": "set"
+        },
+        "delta": {
+          "Bhramastra": {
+            "old": "0",
+            "new": "1"
+          }
+        }
+      }
+    ],
+    "timestamp": "2014-03-01T16:23:42.131Z",
+    "id": "da833830-a15d-11e3-84ae-ebaad0c03951"
+  },
+  {
+    "event": "create",
+    "timestamp": "2014-03-01T16:29:30.088Z",
+    "team": {
+      "id": "53120aea188101a72a668a5e",
+      "name": "The Gaurdians"
+    },
+    "id": "a9e93e80-a15e-11e3-b581-1b9a3fec215b"
+  }
+]
+```
