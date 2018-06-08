@@ -59,3 +59,8 @@ You can use leaderboards to drive competitive behaviours within a game. Our lead
 
 Learn more: [Leaderboards Manual](leaderboard.md)
 
+## Keep touched
+
+We hope this guide helped you get a better understanding of the Playing I/O Platform and what it is capable of. New features are being added everyday, and we'll be updating this guide as time passes. We aim to use this as a comprehensive introduction to the Platform till we create more interactive and engaging teaching methods.
+
+If you have any suggestions or questions about a feature not covered in this guide, feel free to drop a issuse and we'll see to it right away!
