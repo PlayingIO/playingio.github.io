@@ -155,10 +155,10 @@ By default, last 24 hour activity is returned. A period can be specified by pass
 
 #### Parameters
 
-|    Name     |    Description    |
-|-------------|-------------------|
-| start       | Earliest possible activity time stamp. Unit: UNIX time stamp or ISO time stamp |
-| end         | Latest possible activity time stamp. Unit: UNIX time stamp or ISO time stamp |
+|   Name   | Type  | Default | Required |   Description   |
+|----------|-------|---------|----------|-----------------|
+| start    | date  |         |          | Earliest possible activity time stamp in ISO format|
+| end      | date  |         |          | Latest possible activity time stamp in ISO format |
 
 #### Response
 
@@ -265,10 +265,10 @@ Timestamp values must be either ISO or UNIX time stamp.
 
 #### Parameters
 
-|    Name     |    Description    |
-|-------------|-------------------|
-| start       | Earliest possible activity timestamp |
-| end         | Latest possible activity timestamp. |
+|   Name   | Type  | Default | Required |   Description   |
+|----------|-------|---------|----------|-----------------|
+| start    | date  |         |          | Earliest possible activity time stamp in ISO format|
+| end      | date  |         |          | Latest possible activity time stamp in ISO format |
 
 #### Response
 
@@ -311,3 +311,44 @@ Timestamp values must be either ISO or UNIX time stamp.
 }
 ```
 
+## Mark Notifications as Read
+
+```
+POST /user/notifications/:id
+```
+
+Mark player notifications as read.
+
+Responds with an object containing 2 keys:
+
+* ok: Total number of notifications that were marked read.
+* unseen: Total number of notifications that are still unseen.
+
+#### Parameters
+
+|   Name   | Type  | Default | Required |   Description   |
+|----------|-------|---------|----------|-----------------|
+| more     | array |         |          | An Array containing the IDs of notifications that are to be marked as read. |
+
+#### Request
+
+```json
+{
+  "ids": ["706db9d2-5756-11e3-a219-b1df8153ecfb"]
+}
+```
+
+#### Response
+
+```json
+{
+  "ok": 1,
+  "unseen": 0
+}
+```
+
+#### Errors
+
+```
+401 Invalid notification id
+```
