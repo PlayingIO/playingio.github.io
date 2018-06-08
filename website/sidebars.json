@@ -20,6 +20,7 @@
       "action-structure",
       "team-structure",
       "mission-structure",
+      "mission-instance",
       "rule-structure",
       "leaderboard-structure",
       "requires-structure",
