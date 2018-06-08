@@ -96,3 +96,12 @@ They represent missions or sub-missions. They must contain a field key which mus
 |-------------|-------------------|
 | key         | Represents a path to a mission or a sub-mission. If the key is the mission instance ID then it represents the mission instance container otherwise it represents sub-missions. The key is used to trigger tasks in sub-missions without acutally specifying the full path to the task. |
 | nodes       | These represent all available nodes within the mission or sub-mission. The node can be of 2 types: <ul><li>Task or Sub-Mission</li><li>Gateway</li></ul> |
+
+### Mission Instance Task Structure
+
+|    Field    |    Description    |
+|-------------|-------------------|
+| id          | The ID of the task or sub-mission. This represents the path to the mission or sub-mission. |
+| state       | Can be one of three states:<ul><li>**READY** means the player can perform the task</li><li>**COMPLETED** means the player has finished the task</li><li>**ACTIVE** means a task which has been performed but not completed (looped tasks), or a sub-mission in which only some of the tasks have been completed.</li></ul> |
+| loop        | The number of times the player has perfomed this task. |
+| perfomers   | The players within this task who have performed this task at least once. Each performer has the following keys: <ul><li>id: The ID of the performer.</li><li>scopes: The custom leaderboard scopes the performer had performed this task with.</li></ul> |
