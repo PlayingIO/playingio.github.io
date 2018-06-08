@@ -350,7 +350,7 @@ Responds with an object containing 2 keys:
 #### Errors
 
 ```
-401 Invalid notification id
+401 invalid_notification: Invalid notification id
 ```
 
 
@@ -366,8 +366,8 @@ Get the list of pending approvals to join teams/processes for the player.
 
 |   Name   | Type   | Default | Required |   Description   |
 |----------|--------|---------|----------|-----------------|
-| skip     | number | 0       |          | Number of approvals to skip
-| limit    | number | 0       |          | Maximum number of approvals to return
+| skip     | number | 0       |          | Number of approvals to skip. |
+| limit    | number | 10      |          | Maximum number of approvals to return. |
 
 #### Response
 
@@ -404,3 +404,64 @@ Get the list of pending approvals to join teams/processes for the player.
   "total": 2
 }
 ```
+
+
+## Get Pending Invitations
+
+```
+GET /users/me/invites
+```
+
+Get the list of pending invitations to join teams/processes for the player.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| skip     | number | 0       |          | Number of invites to skip. |
+| limit    | number | 10      |          | Maximum number of invites to return. |
+
+#### Response
+
+```json
+{
+  "data": [
+    {
+      "event": "invite",
+      "timestamp": "2014-03-01T19:04:33.209Z",
+      "actor": {
+        "id": "neo",
+        "alias": "Neo"
+      },
+      "team": {
+        "id": "53120aea188101a72a668a5e",
+        "name": "The Gaurdians"
+      },
+      "roles": {
+        "God": true
+      },
+      "state": "PENDING",
+      "id": "5300da90-a174-11e3-b581-1b9a3fec215b"
+    },
+    {
+      "event": "invite",
+      "timestamp": "2014-03-01T19:05:23.452Z",
+      "actor": {
+        "id": "neo",
+        "alias": "Neo"
+      },
+      "process": {
+        "id": "neo/5312096a8e1ebb4550a6a6f9",
+        "name": "The Matrix"
+      },
+      "roles": {
+        "~": "player"
+      },
+      "state": "PENDING",
+      "id": "70f353c0-a174-11e3-b581-1b9a3fec215b"
+    }
+  ],
+  "total": 2
+}
+```
+
