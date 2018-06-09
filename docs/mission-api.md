@@ -835,3 +835,37 @@ By default, if no start and end parameters are provided, the activity feed for t
 ```
 
 
+## List Invitations Sent out for a Mission
+
+```
+GET /user-missions/:primary/invites
+```
+
+Get a list of invites the player has sent out to join a missions.
+
+Only invitations sent out by the player will be listed.
+
+#### Response
+
+```json
+{
+  "data": [
+    {
+      "event": "invite",
+      "timestamp": "2014-03-02T17:37:29.371Z",
+      "invitee": {
+        "id": "trinity",
+        "alias": "Trinity"
+      }
+      "roles": {
+        "matrix": "player"
+      },
+      "state": "PENDING",
+      "id": "53c42eb0-a231-11e3-b632-ede196eae44e"
+    }
+  ],
+  "total": 1
+}
+```
+
+
