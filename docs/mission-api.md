@@ -427,3 +427,97 @@ Its returns a message indicating the result of the operation.
 ```
 
 
+## List Mission Triggers
+
+```
+GET /user-missions/:id/triggers
+```
+
+Get a list of all available triggers a player can play in a mission instance.
+
+#### Response
+
+```json
+[
+  {
+    "trigger": "destroy_the_world:choose_your_path",
+    "name": "Destroy the World",
+    "actions": [
+      {
+        "metric": {
+          "id": "existential_plane",
+          "type": "state",
+          "name": "Existential Plane"
+        },
+        "value": "Hell",
+        "verb": "set"
+      },
+      {
+        "metric": {
+          "id": "karma",
+          "type": "point",
+          "name": "Karma"
+        },
+        "value": "-1000000000",
+        "verb": "add"
+      }
+    ]
+  },
+  {
+    "trigger": "let_it_burn:choose_your_path",
+    "name": "Let it Burn",
+    "actions": [
+      {
+        "metric": {
+          "id": "existential_plane",
+          "type": "state",
+          "name": "Existential Plane"
+        },
+        "value": "Hell",
+        "verb": "set"
+      },
+      {
+        "metric": {
+          "id": "karma",
+          "type": "point",
+          "name": "Karma"
+        },
+        "value": "1",
+        "verb": "add"
+      }
+    ]
+  },
+  {
+    "trigger": "try_to_save_the_world:choose_your_path",
+    "name": "Try to save the World",
+    "actions": [
+      {
+        "metric": {
+          "id": "existential_plane",
+          "type": "state",
+          "name": "Existential Plane"
+        },
+        "value": "Material",
+        "verb": "set"
+      },
+      {
+        "metric": {
+          "id": "karma",
+          "type": "point",
+          "name": "Karma"
+        },
+        "value": "1000000001",
+        "verb": "add"
+      }
+    ]
+  }
+]
+```
+
+#### Errors
+
+```
+401 access_denied: Player not authorized. Player not a part of the mission.
+```
+
+
