@@ -930,3 +930,42 @@ It returns the invitation request.
 ```
 
 
+## Cancel a Sent Invitation
+
+```
+DELETE /user-missions/:primary/invites/:id
+```
+
+Cancel a pending invite sent out by the player.
+
+It returns the canceled invitation request.
+
+
+#### Response
+
+```json
+{
+  "event": "invite",
+  "timestamp": "2014-03-02T18:03:59.848Z"
+  "mission": {
+    "id": "neo/therealmatrix",
+    "name": "The Real Matrix"
+  },
+  "actor": {
+    "id": "neo",
+    "name": "Neo"
+  },
+  "invitee": {
+    "id": "trinity",
+    "name": "Trinity"
+  },
+  "roles": {
+    "good": "player"
+  },
+  "state": "CANCELLED",
+  "id": "052de920-a174-11e3-b581-1b9a3fec215b"
+  "cancelledAt": "2014-03-02T18:04:08.507Z"
+}
+```
+
+
