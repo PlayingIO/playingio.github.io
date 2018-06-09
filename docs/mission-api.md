@@ -184,3 +184,43 @@ Returns an array with objects containing the player id and alias.
 ```
 
 
+## Get the Profile of a Mission Performer
+
+```
+GET /user-missions/:primary/performers/:id
+```
+
+Get the profile of a performer. In private missions, only existing mission performers can view performer profiles.
+
+Returns an object with the player profile information.
+
+#### Response
+
+```json
+{
+  "id": "trinity",
+  "alias": "Trinity!",
+  "created":"2014-03-01T16:22:43.751Z",
+  "enabled": true,
+  "scores": [
+    {
+      "metric": {
+        "id": "xp",
+        "name": "experience",
+        "type": "point"
+      },
+      "value": "50"
+    }
+  ],
+  "teams": []
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player not authorized. Only performers can view performer listing in PRIVATE missions.
+404 performer_not_found: Invalid performer_id. Requested performer not a part of the mission.
+```
+
+
