@@ -761,3 +761,53 @@ The owner transferring ownership will retain his lanes in the mission after the 
 ```
 
 
+## Change Own Roles in Mission
+
+```
+POST /user-missions/:primary/roles/:user_id
+```
+
+If the mission is public then the player's roles are updated and the new mission state is returned. If the mission is protected or private then a generated approval request for role change is returned.
+
+The new roles should be passed as an object in the request body. Keys in the object represent the lane id and the values should be the desired role.
+
+There are 3 possible role values :
+
+* **observer** - Can only view mission state
+* **player** - Can play a mission
+* ***false*** - Removes the player from the lane
+
+The lanes available to join depend on the mission definition.
+
+#### Request
+
+```json
+{
+  "main": "player"
+}
+```
+
+#### Response
+
+In case of a protected or private mission.
+
+```json
+{
+  "id": "523215efacc4b2f216000034",
+  "event": "role:request",
+  "timestamp": "2014-03-02T17:47:04.260Z",
+  "mission": {
+    "id": "droid/kill"
+  },
+  "roles": {
+    "main": "player"
+  },
+  "state": "PENDING",
+  "actor": {
+    "id": "droid",
+    "alias": "Droid!"
+  }
+}
+```
+
+
