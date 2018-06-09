@@ -240,3 +240,70 @@ Start a mission using a specified mission definition. It returns the state of th
 | access   | string |         | ✓        | The access setting of the mission instance. It can be either public, protected or private. <br/>Defaults to strictest access setting allowed by the definition. |
 
 
+## Update Mission Settings
+
+```
+PATCH /user-missions/:id
+```
+
+Update the name or access settings of the mission instance.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| name     | string |         |          | The new name of the mission. |
+| access   | string |         |          | The new access setting for the mission. Possible access settings: PUBLIC, PROTECTED, PRIVATE. |
+
+#### Request
+
+```json
+{
+  "name": "My New Mission",
+  "access": "PUBLIC"
+}
+```
+
+#### Response
+
+```json{
+  "id": "my_mission",
+  "definition": {
+    "id": "work",
+    "name": "work"
+  },
+  "state": "ACTIVE",
+   "created": "2014-03-01T16:23:06.501Z",
+  "name": "My New Mission",
+  "access": "PUBLIC",
+  "performers": [
+    {
+      "id": "clone",
+      "alias": "Clonie",
+      "lanes": [
+        {
+          "name": "main",
+          "role": "player"
+        }
+      ]
+    }
+  ],
+  "owner": {
+    "id": "clone",
+    "alias": "Clonie"
+  },
+  "lanes": [
+    "main"
+  ]
+}
+```
+
+#### Errors
+
+```
+400 validation_exception: Invalid request
+400 invalid_access_setting: Access setting not valid
+401 access_denied: Player not authorized to update the mission. Only mission owner can perform update.
+```
+
+
