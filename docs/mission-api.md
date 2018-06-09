@@ -307,3 +307,27 @@ Update the name or access settings of the mission instance.
 ```
 
 
+## Delete a Mission
+
+```
+DELETE /user-missions/:id
+```
+
+Delete a mission instance.
+
+#### Response
+
+```json
+{
+  "message": "Mission 'clone/foo' has been deleted"
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player not authorized to delete the mission. Only the mission owner can delete the mission.
+```
+
+
+
