@@ -158,3 +158,29 @@ Get details of a mission instance with the specified id.
 ```
 
 
+## List All Performers of a Mission
+
+```
+GET /user-missions/:primary/performers
+```
+
+List the performers of the mission.
+
+Returns an array with objects containing the player id and alias.
+
+#### Response
+
+```json
+[
+  {
+    "id": "neo",
+    "alias": "The One!"
+  },
+  {
+    "id": "trinity",
+    "alias": "Trinity!"
+  }
+]
+```
+
+
