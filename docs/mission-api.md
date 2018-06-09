@@ -400,3 +400,30 @@ If the mission is public, then the player's roles are returned. If the mission i
 ```
 
 
+## Leave a Mission
+
+```
+DELETE /user-missions/:id/leave
+```
+
+Leave a mission.
+
+Its returns a message indicating the result of the operation.
+
+
+#### Response
+
+```json
+{
+  "message": "Player 'clone' has successfully left the mission 'droid/kill'"
+}
+```
+
+#### Errors
+
+```
+404 performer_not_found: Player is not a performer in the mission.
+403 forbidden: Owner is not allowed to leave the mission.
+```
+
+
