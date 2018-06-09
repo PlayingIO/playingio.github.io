@@ -969,3 +969,43 @@ It returns the canceled invitation request.
 ```
 
 
+## List Pending Mission Join or Role Change Requests
+
+```
+GET /user-missions/:primary/approvals
+```
+
+Get a list of pending player requests in a mission.
+
+A pending request can be approved by the owner of the mission. Others who try to request the list of approvals will get an error.
+
+#### Response
+
+```json
+{
+  "data": [
+    {
+      "event": "join:request",
+      "timestamp": "2014-03-01T19:02:22.642Z",
+      "actor": {
+        "id": "morpheus",
+        "alias": "Morpheus"
+      },
+      "roles": {
+        "matrix": "player"
+      },
+      "state": "PENDING",
+      "id": "052de920-a174-11e3-b581-1b9a3fec215b"
+    }
+  ],
+  "total": 1
+}
+```
+
+#### Errors
+
+```
+401 access_denied: When a non owner tries to view approval requests
+```
+
+
