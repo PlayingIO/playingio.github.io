@@ -331,3 +331,72 @@ Delete a mission instance.
 
 
 
+## Join a Mission
+
+```
+POST /user-missions/:id/performers
+```
+
+Join a mission.
+
+You must specify the role and lanes which the player wishes to join in.
+
+There are 2 possible role values :
+
+* observer - Can only view mission state
+* player - Can play a mission
+
+The lanes available to join depend on the mission definition.
+
+The desired lanes and roles should be specified in the request body, the object keys being the lanes and the values being the desired roles.
+
+If the mission is public, then the player's roles are returned. If the mission is protected then a generated approval request to join the mission is returned. If the mission is private, then an error is returned.
+
+#### Request
+
+```json
+{
+  "war": "player"
+}
+```
+
+#### Response of joining a public mission
+
+```json
+{
+  "war": "player"
+}
+```
+
+#### Response of joining a protected mission
+
+```json
+{
+  "id": "523215efacc4b2f216000034",
+  "event": "join:request",
+  "timestamp": "2014-03-02T17:47:04.260Z",
+  "mission": {
+    "id": "droid/kill"
+  },
+  "roles": {
+    "war": "observer"
+  },
+  "state": "PENDING",
+  "actor": {
+    "id": "droid",
+    "alias": "Droid!"
+  }
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Attempt to join a private mission
+400 validation_exception: Invalid request
+409 player_exists: Player is already a part of the mission.
+400 invalid_role: Requested role is invalid. It can only be either player or observer.
+400 invalid_lanes: Requested lane is invalid/does not exist.
+```
+
+
