@@ -1009,3 +1009,50 @@ A pending request can be approved by the owner of the mission. Others who try to
 ```
 
 
+## Approve Mission Join or Role Change Request
+
+```
+PATCH /user-missions/:primary/approvals/:request_id
+```
+
+Accept a player request to join a mission or role change.
+
+Only the owner of the mission has the right to approve requests.
+
+It returns the accepted approval request.
+
+#### Response
+
+```json
+{
+  "event": "join:request",
+  "timestamp": "2014-03-01T19:02:22.642Z",
+  "actor": {
+    "id": "morpheus",
+    "alias": "Morpheus"
+  },
+  "mission": {
+    "id": "neo/therealmatrix",
+    "name": "Protected"
+  },
+  "roles": {
+    "matrix": "player"
+  },
+  "state": "ACCEPTED",
+  "id": "052de920-a174-11e3-b581-1b9a3fec215b",
+  "accepted_by": {
+    "id": "neo",
+    "alias": "Neo"
+  },
+  "accepted_at": "2014-03-02T17:51:42.157Z"
+}
+```
+
+#### Errors
+
+```
+404 invalid_approval_request: Invalid request_id
+401 access_denied: Player not authorized to approve request.
+```
+
+
