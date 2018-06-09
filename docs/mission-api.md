@@ -869,3 +869,64 @@ Only invitations sent out by the player will be listed.
 ```
 
 
+## Send a Mission Invitation
+
+```
+POST /user-missions/:primary/invites
+```
+
+Invite a player to join a mission.
+
+Only the owner of the mission can invite other players.
+
+The roles need to be specified as an object with the key being the lane name and the value is the role in the lane.
+
+It returns the invitation request.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| player   | string |         | ✓        | The ID of the player to whom the invitation has to be sent to. |
+| roles    | object |         | ✓        | The roles of the player in the the mission. |
+
+#### Request
+
+```json
+{
+  "player": "trinity",
+  "roles": {
+    "matrix": "player",
+    "training": "observer"
+  }
+}
+```
+
+#### Response
+
+```json
+{
+  "id": "aef37730-a233-11e3-9af5-753d0e60669a",
+  "event": "invite",
+  "timestamp": "2014-03-02T17:54:21.347Z",
+  "actor": {
+    "id": "neo",
+    "alias": "Neo"
+  },
+  "invitee": {
+    "id": "trinity",
+    "alias": "Trinity"
+  },
+  "mission": {
+    "id": "neo/therealmatrix",
+    "name": "Protected"
+  },
+  "roles": {
+    "matrix": "player",
+    "training": "observer"
+  },
+  "state": "PENDING"
+}
+```
+
+
