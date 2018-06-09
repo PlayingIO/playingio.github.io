@@ -521,3 +521,135 @@ Get a list of all available triggers a player can play in a mission instance.
 ```
 
 
+## Play a Mission Trigger
+
+```
+POST /user-missiions/:id/tasks
+```
+
+Play a mission. Playing a mission causes its state to change.
+
+It returns an array containing:
+* The new triggers that become available
+* The updated scores of the player
+* Any events that occured
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| trigger  | string |         | ✓        | The ID of the trigger to be played. |
+| scopes   | string |         |          | Scope in which the scores will be counted. |
+
+#### Request
+
+```json
+{
+  "trigger": "try_to_save_the_world:choose_your_path"
+}
+```
+
+#### Response
+
+```json
+{
+  "triggers": [
+    {
+      "trigger": "brahmastra:choose_your_weapon",
+      "name": "Brahmastra",
+      "lane": "matrix",
+      "locked": "false",
+      "rewards": [
+        {
+          "metric": {
+            "id": "weapons",
+            "type": "set",
+            "name": "Weapons"
+          },
+          "value": {
+            "Bhramastra": "1"
+          },
+          "verb": "add"
+        }
+      ]
+    },
+    {
+      "trigger": "excalibur:choose_your_weapon",
+      "name": "Excalibur",
+      "lane": "matrix",
+      "locked": "false",
+      "rewards": [
+        {
+          "metric": {
+            "id": "weapons",
+            "type": "set",
+            "name": "Weapons"
+          },
+          "value": {
+            "Excalibur": "1"
+          },
+          "verb": "add"
+        }
+      ]
+    },
+    {
+      "trigger": "mjolinir:choose_your_weapon",
+      "name": "Mjolinir",
+      "lane": "matrix",
+      "locked": "false",
+      "rewards": [
+        {
+          "metric": {
+            "id": "weapons",
+            "type": "set",
+            "name": "Weapons"
+          },
+          "value": {
+            "Mjolinir": "1"
+          },
+          "verb": "add"
+        }
+      ]
+    }
+  ],
+  "events": {
+    "local": [
+      {
+        "event": "progress",
+        "activity": {
+          "id": "try_to_save_the_world",
+          "name": "Try to save the World"
+        },
+        "actor": {
+          "id": "neo",
+          "alias": "Neo"
+        },
+        "changes": [
+          {
+            "metric": {
+              "id": "karma",
+              "name": "Karma",
+              "type": "point"
+            },
+            "delta": {
+              "old": "1000000001",
+              "new": "2000000002"
+            }
+          }
+        ],
+        "timestamp": "2014-03-02T17:47:04.260Z",
+        "id": "aa6d4840-a232-11e3-9af5-753d0e60669a"
+      }
+    ],
+    "global": []
+  }
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player not authorized. He is not a performer in the mission.
+```
+
+
