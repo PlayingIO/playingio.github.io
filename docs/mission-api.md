@@ -811,3 +811,27 @@ In case of a protected or private mission.
 ```
 
 
+## Get a Mission's Activity Feed
+
+```
+GET /user-missions/:primary/activities
+```
+
+Get mission activity feed.
+
+By default, if no start and end parameters are provided, the activity feed for the last 24 hours is provided.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| start    | date   |         |          | Earliest possible activity timestamp ISO format. |
+| end      | date   |         |          | Latest possible activity timestamp ISO format. |
+
+#### Errors
+
+```
+400 invalid_date: Requested date format is invalid.
+```
+
+
