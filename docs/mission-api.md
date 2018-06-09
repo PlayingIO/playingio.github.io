@@ -224,3 +224,19 @@ Returns an object with the player profile information.
 ```
 
 
+## Create a Mission
+
+```
+POST /user-missions
+```
+
+Start a mission using a specified mission definition. It returns the state of the newly created mission.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| id       | string |         | ✓        | The ID of the newly created mission instance. |
+| access   | string |         | ✓        | The access setting of the mission instance. It can be either public, protected or private. <br/>Defaults to strictest access setting allowed by the definition. |
+
+
