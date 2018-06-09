@@ -680,3 +680,84 @@ Returns a confirmation message of the event.
 404 performer_not_found: Invalid performer_id. Requested performer is not a part of the mission.
 403 forbidden: Mission owner cannot be kicked.
 ```
+
+## Transfer Mission Ownership
+
+```
+PATCH /user-missions/:primary/transfer
+```
+
+Transfer the ownership of the mission to another player.
+
+The new owner can be either an existing performer in the mission or any other player in the game.
+
+The lanes and roles assigned to the new owner can be specified in the body of the request. If no lanes are specified, the mission default lanes are given to the owner.
+
+The owner transferring ownership will retain his lanes in the mission after the transfer.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| newOwner | string |         | ✓        | ID of the new owner. |
+| roles    | object |         | ✓        | Object that contains the lanes/roles of the new owner. |
+
+##### Request
+
+```json
+{
+  "newOwner": "rogers",
+  "roles": {
+    "main": "player"
+  }
+}
+```
+
+#### Response
+
+```json
+{
+    "id": "fury/avengers",
+    "definition": "work",
+    "state": "ACTIVE",
+    "created": "april11,2012",
+    "access": "PROTECTED",
+    "performers": {
+        "fury": {
+            "main": "player"
+        },
+        "loki": {
+            "main": "observer"
+        },
+        "stark": {
+            "main": "player"
+        }
+    },
+    "keys": {
+        "fury/avengers": "work"
+    },
+    "containers": {
+        "work": {
+            "key": "fury/avengers",
+            "tokens": 1,
+            "nodes": {
+                "aaa": {
+                    "state": "READY",
+                    "tokens": 1
+                }
+            }
+        }
+    },
+    "owner": "rogers"
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player not authorized. Only the instance owner can transfer ownership.
+400 invalid_lane: Invalid lane specified.
+400 invalid_role: Roles provided are invalid. Player must have at least one role.
+```
+
+
