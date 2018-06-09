@@ -105,3 +105,56 @@ Any missions which were bootstrapped will be created and listed here when the pl
 ```
 
 
+## Get a Mission
+
+```
+GET /user-missions/:id
+```
+
+Get details of a mission instance with the specified id.
+
+#### Response
+
+```json
+{
+  "id": "driving_test",
+  "definition": {
+    "id": "test",
+    "name": "Simple tests"
+  },
+  "state": "ACTIVE",
+  "created": "2014-03-01T16:34:57.402Z",
+  "access": "PROTECTED",
+  "performers": [
+    {
+      "id": "alonso",
+      "alias": "Alonso",
+      "lanes": [
+        {
+          "name": "main",
+          "role": "observer"
+        }
+      ]
+    },
+    {
+      "id": "massa",
+      "alias": "Massa",
+      "lanes": [
+        {
+          "name": "main",
+          "role": "player"
+        }
+      ]
+    }
+  ],
+  "owner": {
+    "id": "clone",
+    "alias": "Clonie"
+  },
+  "lanes": [
+    "main"
+  ]
+}
+```
+
+
