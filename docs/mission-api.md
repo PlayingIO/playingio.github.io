@@ -1056,3 +1056,49 @@ It returns the accepted approval request.
 ```
 
 
+## Reject Mission Join or Role Change Request
+
+```
+DELETE /user-missions/:primary/approvals/:request_id
+```
+
+Reject a player request to join or change roles in a mission.
+
+Only the owner of the mission has the rights to reject a request.
+
+It returns the rejected approval request.
+
+#### Response
+
+```json
+
+  "event": "join:request",
+  "timestamp": "2014-03-02T18:05:29.321Z",
+  "actor": {
+    "id": "trinity",
+    "alias": "Trinity"
+  },
+  "mission": {
+    "id": "neo/thefakematrix",
+    "name": "The Fake Matrix"
+  },
+  "roles": {
+    "matrix": "player"
+  },
+  "state": "REJECTED",
+  "id": "3d183590-a235-11e3-9af5-753d0e60669a",
+  "rejected_by": {
+    "id": "neo",
+    "alias": "Neo"
+  },
+  "rejectedAt": "2014-03-02T18:05:43.984Z"
+}
+```
+
+#### Errors
+
+```
+404 invalid_approval_request: Invalid request_id
+401 access_denied: Player not authorized to reject a request. Only mission owners can accept/reject requests.
+```
+
