@@ -37,6 +37,13 @@
       "team-api",
       "metric-api",
       "leaderboard-api"
+    ],
+    "Events": [
+      "events",
+      "user-events",
+      "action-events",
+      "mission-events",
+      "team-events"
     ]
   }
 }
