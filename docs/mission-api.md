@@ -653,3 +653,30 @@ It returns an array containing:
 ```
 
 
+## Kick Performer from a Mission
+
+```
+DELETE /user-missions/:primary/performers/:id/kick
+```
+
+Kick out a performer from the mission.
+
+This can only be done by the owner of the mission and the owner himself cannot be kicked out.
+
+Returns a confirmation message of the event.
+
+#### Response
+
+```json
+{
+  "message": "The player 'morpheus' has been removed from mission '/neo/therealmatrix'"
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player not authorized. Only mission owners can kick performers.
+404 performer_not_found: Invalid performer_id. Requested performer is not a part of the mission.
+403 forbidden: Mission owner cannot be kicked.
+```
