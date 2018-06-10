@@ -1087,3 +1087,50 @@ It returns the accepted approval request.
 401 access_denied: Player is not authorized to approve the request.
 ```
 
+
+## Reject Team Join or Role Change Request
+
+```
+DELETE /teams/:primary/approvals/:request_id
+```
+
+Reject a player request to join a team.
+
+The player who rejects the request must have sufficient privileges to do so.
+
+It returns the rejected approval request.
+
+#### Response
+
+```json
+{
+  "event": "join:request",
+  "timestamp": "2014-03-02T20:45:31.317Z",
+  "actor": {
+    "id": "neo",
+    "alias": "Neo"
+  },
+  "team": {
+    "id": "hackers",
+    "name": "The Hackers"
+  },
+  "roles": {
+    "God": true
+  },
+  "state": "REJECTED",
+  "id": "98548650-a24b-11e3-9af5-753d0e60669a",
+  "rejected_by": {
+    "id": "morpheus",
+    "alias": "Morpheus"
+  },
+  "rejected_at": "2014-03-02T20:45:47.679Z"
+}
+```
+
+#### Errors
+
+```
+404 invalid_approval_request: Invalid request_id.
+401 access_denied: Player is not authorized to reject the request.
+```
+
