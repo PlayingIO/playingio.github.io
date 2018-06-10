@@ -226,3 +226,119 @@ GET /leaderboards/level_leaderboard?player_id=droid&cycle=alltime&merge_with=kil
 }
 ```
 
+
+## Get a Player or Team Rank Trend
+
+```
+GET /leaderboard/:id/trend
+```
+
+Get a player or team rank trend. The trend can be viewed at the following cycles:
+
+* Daily
+* Weekly
+* Monthly
+* Yearly
+
+Trends can be viewed only for those cycles for which the specified leaderboard has been designed. So if a leaderboard has monthly and weekly cycles, you will only be able to view only monthly and weekly trends.
+
+When the leaderboard is of type teams, the team_instance_id is required to specify the team.
+
+The response is an an array of objects. The data key of those objects contains rank information. A rank of -1 is returned when the player was not on the leaderboard at the given time period.
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| cycle    | string |         | ✓        | Leaderboard cycle. Possible values : daily, weekly, monthly, yearly. |
+| entities | string |         | ✓        | Comma separated string containing IDs of players whose rank trends are required. |
+| start    | date   |         | ✓        | Valid date string, format - YYYY-mm-dd (eg. 2013-12-13). Specifies the start date for the trend. |
+| end      | date   |         | ✓        | Valid date string, format - YYYY-mm-dd (eg. 2013-12-13). Specifies the end date for the trend. |
+| team     | string |         | ✓        | ID of the team instance, required when the leaderboard is of type Team Instance. |
+ 
+#### Response
+
+```
+GET leaderboard/game_leaderboard/trend?cycle=daily&start=2013-05-01&end=2013-05-07&entities=peter,johny
+```
+
+```json
+[
+  {
+    "data": [
+      {
+        "date": "2013-05-01",
+        "score": "9",
+        "rank": 2
+      },
+      {
+        "date": "2013-05-02",
+        "score": "9",
+        "rank": 5
+      },
+      {
+        "date": "2013-05-03",
+        "score": "11",
+        "rank": 6
+      },
+      {
+        "date": "2013-05-04",
+        "score": "11",
+        "rank": 6
+      },
+      {
+        "date": "2013-05-05",
+        "rank": -1
+      },
+      {
+        "date": "2013-05-06",
+        "rank": -1
+      },
+      {
+        "date": "2013-05-07",
+        "rank": -1
+      }
+    ],
+    "player": {
+      "id": "peter",
+      "alias": "Peter!!"
+    }
+  },
+  {
+    "data": [
+      {
+        "date": "2013-05-01",
+        "rank": -1
+      },
+      {
+        "date": "2013-05-02",
+        "rank": -1
+      },
+      {
+        "date": "2013-05-03",
+        "score": "111",
+        "rank": 1
+      },
+      {
+        "date": "2013-05-04",
+        "score": "122",
+        "rank": 1
+      },
+      {
+        "date": "2013-05-05",
+        "rank": -1
+      },
+      {
+        "date": "2013-05-06",
+        "rank": -1
+      },
+      {
+        "date": "2013-05-07",
+        "rank": -1
+      }
+    ],
+    "player": {
+      "id": "johny",
+      "alias": "JohnyJ"
+    }
+  }
+]
+```
