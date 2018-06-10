@@ -478,3 +478,30 @@ Get a team member's profile. Only fellow team members can see the profile.
 ```
 
 
+## Kick Member From a Team
+
+```
+DELETE /teams/:primary/members/:id/kick
+```
+
+Kick a member from the team.
+
+Team owners can not be kicked. Members who kick must have sufficient privileges to do so else an error is returned.
+
+#### Response
+
+```json
+{
+  "message": "The player 'trinity' has been removed from team 'hackers'"
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player does not have sufficient permissions to perform kick.
+403 forbidden: Cannot kick owner of the team.
+404 member_not_found: Requested player not a part of the team.
+```
+
+
