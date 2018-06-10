@@ -871,3 +871,72 @@ The start and end timestamps can be specified as an ISO Timestamp.
 ```
 400 invalid_date: Requested date format is invalid.
 ```
+
+
+## Send a Team Invitation
+
+```
+POST /teams/:primary/invites
+```
+
+Invite a player to join a team.
+
+The player must have a role with peer or assign permissions and the required rank to send the invite.
+
+It returns the invitation request.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| player   | string |         | ✓        | The ID of the player to whom the invitation has to be sent to. |
+| roles    | object |         | ✓        | The desired roles for the player. |
+
+
+#### Request
+
+```json
+{
+  "id": "neo",
+  "roles": {
+    "Member": true
+  }
+}
+```
+
+#### Response
+
+```json
+{
+  "id": "1b669910-a257-11e3-92be-0395a5e3aad0",
+  "event": "invite",
+  "timestamp": "2014-03-02T22:07:55.681Z",
+  "actor": {
+    "id": "morpheus",
+    "alias": "Morpheus"
+  },
+  "invitee": {
+    "id": "neo",
+    "alias": "Neo"
+  },
+  "team": {
+    "id": "5313986386e830697700910c",
+    "name": "The Hackers"
+  },
+  "roles": {
+    "Member": true
+  },
+  "state": "PENDING"
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player not authorized to send an invite.
+409 member_exists: Request player already a member of the team.
+401 team_locked: Cannot perform the operation when the team is locked.
+400 invalid_role: Requested roles are invalid.
+409 already_invited: An invitation has already been sent to the requested player.
+```
+
