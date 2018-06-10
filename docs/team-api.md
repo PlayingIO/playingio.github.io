@@ -178,3 +178,48 @@ Get information about a particular team instance.
 }
 ```
 
+
+## Create a Team
+
+```
+POST /teams
+```
+
+Create a team instance by specifying a team definition.
+
+It returns the state of the newly created team.
+
+|   Name    | Type   | Default | Required |   Description   |
+|-----------|--------|---------|----------|-----------------|
+| groupname | number | 0       | ✓        | The name of the newly created team instance. |
+| access    | string |         | ✓        | The access setting of the team instance. It can be either public, protected or private. <br/>Defaults to strictest access setting allowed by the definition. |
+| definition| string |         | ✓        | ID of the team definition which is to be used. |
+
+#### Reqeust
+
+```json
+{
+  "name": "globe-trotters",
+  "access": "PRIVATE",
+  "definition": "national"
+}
+```
+
+#### Response
+
+```json
+{
+  "id": "globe-trotters",
+  "name": "globe-trotters",
+  "definition": "national",
+  "created": "2014-03-02T15:11:48.079Z",
+  "access": "PRIVATE",
+  "owner": "morpheus",
+  "locked": false,
+  "member_count": {
+    "God": 1
+  },
+  "total_members": 1
+}
+```
+
