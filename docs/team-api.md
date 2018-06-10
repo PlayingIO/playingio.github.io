@@ -120,3 +120,61 @@ Any teams which were bootstrapped will be created and listed here when the playe
 }
 ```
 
+
+## Get a Team
+
+```
+GET /teams/:id
+```
+
+Get information about a particular team instance.
+
+#### Response
+
+```json
+{
+  "id": "globe_trotters",
+  "name": "The Globe Trotters",
+  "definition": {
+    "id": "local",
+    "name": "local"
+  },
+  "created": "2014-03-01T16:29:30.088Z",
+  "access": "PROTECTED",
+  "owner": {
+    "id": "clone",
+    "alias": "Clonie"
+  },
+  "locked": false,
+  "member_count": [
+    {
+      "name": "member",
+      "count": 0
+    },
+    {
+      "name": "admin",
+      "count": 0
+    },
+    {
+      "name": "super_admin",
+      "count": 0
+    },
+    {
+      "name": "owner",
+      "count": 1
+    }
+  ],
+  "total_members": 1,
+  "roles": [
+    "admin",
+    "member",
+    "owner",
+    "super_admin"
+  ],
+  "my_roles": [
+    "owner"
+  ],
+  "can_leave": false
+}
+```
+
