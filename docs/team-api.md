@@ -330,3 +330,73 @@ It returns a confirmation message of the event.
 ```
 
 
+## Change Own Roles in Team
+
+```
+PATCH /teams/:primray/roles/:user_id
+```
+
+Update player roles in a team.
+
+In a public team, the roles are changed immediately and the new player roles are returned.
+
+In case of a protected and private team, player's roles are updated if he has the required permissions and the updated player roles are returned. If the player does not have permission, it places a request for role change and returns the request.
+
+Each member of the team must have at least 1 role in the team.
+
+The requested roles should be in passed in the body of the request with the keys being the requested roles.
+
+#### Request
+
+```json
+{
+  "member": false,
+  "admin": true
+}
+```
+
+#### Response
+
+* In a public team
+
+```json
+{
+  "message": "You have successfully changed member droid roles in team con_artists",
+  "roles": [
+    "admin"
+  ]
+}
+````
+
+* In case of a protected or private team.
+
+```json
+{
+  "id": "633945c0-29fd-11e4-b2d2-3d471184ea59",
+  "event": "role:request",
+  "timestamp": "2014-08-22T13:08:19.612Z",
+  "team": {
+    "id": "globe_trotters",
+    "name": "The Globe Trotters"
+  },
+  "roles": {
+    "member": false,
+    "admin": true
+  },
+  "state": "PENDING",
+  "actor": {
+    "id": "ripley",
+    "alias": "The Amazing Mr.Ripley!"
+  }
+}
+```
+
+#### Errors
+
+```
+401 team_locked: Cannot update roles when the team is locked.
+400 role_required: Player must have at least 1 role in the team.
+```
+
+
+
