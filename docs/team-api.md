@@ -758,3 +758,68 @@ The player must have the required roles granting the permission to lock/unlock t
 ```
 
 
+## Unlock a Team
+
+```
+DELETE /teams/:primary/locks/:id
+```
+
+Unlock a team. Unlocking a previously locked team allows new members to join the team again.
+
+The player must have the required roles granting the permission to lock/unlock the team.
+
+#### Response
+
+```json
+{
+  "id": "globe-trotters",
+  "name": "The Globe Trotters",
+  "definition": {
+    "id": "basketball_team",
+    "name": "Basketball Team"
+  },
+  "created": "2013-11-10T16:49:10.570Z",
+  "access": "PUBLIC",
+  "owner": {
+    "id": "clone",
+    "alias": "Clonie"
+  },
+  "locked": false,
+  "member_count": [
+    {
+      "name": "member",
+      "count": 10
+    },
+    {
+      "name": "admin",
+      "count": 0
+    },
+    {
+      "name": "super_admin",
+      "count": 0
+    },
+    {
+      "name": "owner",
+      "count": 1
+    }
+  ],
+  "total_members": 11,
+  "roles": [
+    "admin",
+    "member",
+    "owner",
+    "super_admin"
+  ],
+  "my_roles": [
+    "owner"
+  ],
+  "can_leave": false
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player does not have the required permissions to unlock the team
+```
+
