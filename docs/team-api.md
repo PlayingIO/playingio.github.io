@@ -983,3 +983,60 @@ It returns the canceled invitation request.
 ```
 404 invalid_invite: Invalid invite_id.
 ```
+
+
+## List Pending Team Join or Role Change Requests
+
+```
+GET /teams/:id/approvals
+```
+
+Get a list of pending player requests in a team.
+
+A pending request can be approved by a player who is already a part of the team with the required permissions.
+
+A player who cannot approve any new player to join the team will get an error when he requests the list of approvals.
+
+#### Response
+
+```json
+{
+  "data": [
+    {
+      "event": "join:request",
+      "timestamp": "2014-03-01T18:58:22.142Z",
+      "actor": {
+        "id": "morpheus",
+        "alias": "Morpheus"
+      },
+      "roles": {
+        "Member": true
+      },
+      "state": "PENDING",
+      "id": "75d485e0-a173-11e3-b581-1b9a3fec215b"
+    },
+    {
+      "event": "join:request",
+      "timestamp": "2014-03-02T18:11:56.928Z",
+      "actor": {
+        "id": "trinity",
+        "alias": "Trinity"
+      },
+      "roles": {
+        "Member": true
+      },
+      "state": "PENDING",
+      "id": "24205800-a236-11e3-9af5-753d0e60669a"
+    }
+  ],
+  "total": 2
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player does not have sufficient permissions to view team requests.
+```
+
+
