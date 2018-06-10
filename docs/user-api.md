@@ -167,14 +167,14 @@ By default, last 24 hour activity is returned. A period can be specified by pass
   {
     "event": "create",
     "timestamp": "2014-03-01T16:23:06.500Z",
-    "process": {
+    "mission": {
       "id": "neo/5312096a8e1ebb4550a6a6f6",
       "name": "The Matrix"
     },
     "id": "c5465c41-a15d-11e3-84ab-ebaad0c03951"
   },
   {
-    "process": {
+    "mission": {
       "id": "neo/5312096b8e1ebb4550a6a6fc",
       "name": "The Matrix"
     },
@@ -211,7 +211,7 @@ By default, last 24 hour activity is returned. A period can be specified by pass
     "id": "d2e79670-a15d-11e3-84ae-ebaad0c03951"
   },
   {
-    "process": {
+    "mission": {
       "id": "neo/5312096b8e1ebb4550a6a6fc",
       "name": "The Matrix"
     },
@@ -283,7 +283,7 @@ Timestamp values must be either ISO or UNIX time stamp.
         "id": "neo",
         "alias": "Neo"
       },
-      "process": {
+      "mission": {
         "id": "matrix",
         "name": "TheMatrix"
       },
@@ -300,7 +300,7 @@ Timestamp values must be either ISO or UNIX time stamp.
         "id": "keymaker",
         "alias": "The Key Maker!"
       },
-      "process": {
+      "mission": {
         "id": "matrix",
         "name": "TheMatrix"
       },
@@ -360,7 +360,7 @@ Responds with an object containing 2 keys:
 GET /user/me/approvals
 ```
 
-Get the list of pending approvals to join teams/processes for the player.
+Get the list of pending approvals to join teams/missions for the player.
 
 #### Parameters
 
@@ -390,7 +390,7 @@ Get the list of pending approvals to join teams/processes for the player.
     {
       "event": "join:request",
       "timestamp": "2014-03-01T19:02:22.642Z",
-      "process": {
+      "mission": {
         "id": "neo/53122e9a188101a72a668a64",
         "name": "Protected"
       },
@@ -412,7 +412,7 @@ Get the list of pending approvals to join teams/processes for the player.
 GET /users/me/invites
 ```
 
-Get the list of pending invitations to join teams/processes for the player.
+Get the list of pending invitations to join teams/missions for the player.
 
 #### Parameters
 
@@ -450,7 +450,7 @@ Get the list of pending invitations to join teams/processes for the player.
         "id": "neo",
         "alias": "Neo"
       },
-      "process": {
+      "mission": {
         "id": "neo/5312096a8e1ebb4550a6a6f9",
         "name": "The Matrix"
       },
@@ -471,14 +471,14 @@ Get the list of pending invitations to join teams/processes for the player.
 POST /users/me/invites/:id
 ```
 
-Accept an invitation to join a process or a team.
+Accept an invitation to join a mission or a team.
 
 #### Response
 
 ```json
 {
   "event": "invite",
-  "process": {
+  "mission": {
     "id": "gandalf/lotr",
     "name": "lotr"
   },
@@ -514,14 +514,14 @@ Accept an invitation to join a process or a team.
 DELETE /users/me/invites/:id
 ```
 
-Reject an invitation to join the team or process.
+Reject an invitation to join the team or mission.
 
 #### Response
 
 ```json
 {
   "event": "invite",
-  "process": {
+  "mission": {
     "id": "gandalf/lotr",
     "name": "lotr"
   },
