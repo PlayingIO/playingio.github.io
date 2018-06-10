@@ -60,3 +60,20 @@ Get a list of all the metrics in the game.
 ]
 ```
 
+## Get a Metric
+
+```
+GET /metrics/:id
+```
+
+Get the metric for the given metric ID.
+
+#### Response
+
+```json
+{
+  "id": "xp",
+  "name": "experience",
+  "type": "point"
+}
+```
