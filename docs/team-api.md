@@ -547,3 +547,65 @@ Response with the new roles and their ranks is returned.
 400 invalid_role: Invalid role requested.
 ```
 
+
+## Transfer Team Ownership
+
+```
+PATCH /teams/:id/transfer
+```
+
+Transfer team ownership to another player.
+
+The new owner can be either an existing member of the team or any other player in the game.
+
+The roles assigned to the new owner can be either specified in the request body or by default, they will be the owner roles of the team.
+
+The original owner will remain a part of the team with older roles in the team after the transfer.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| newOwner | string |         | ✓        | ID of the new owner. |
+| roles    | object |         | ✓        | Object that contains the roles of the new owner. |
+
+#### Request
+
+```json
+{
+  "id": "ripley",
+  "roles": {
+    "member": true
+  }
+}
+```
+
+#### Response
+
+```
+{
+  "id": "globe_trotters",
+  "name": "The Globe Trotters",
+  "definition": "local",
+  "created": "1937-03-01T16:30:30.088Z",
+  "access": "PROTECTED",
+  "owner": "ripley",
+  "locked": false,
+  "member_count": {
+    "member": 1,
+    "admin": 0,
+    "super_admin": 0,
+    "owner": 1
+  },
+  "total_members": 2
+}
+```
+
+#### Errors
+
+```
+400 invalid_role: The roles specified are either non-existent or the player has no roles
+401 access_denied: Player not authorized to transfer ownership. Only the team owner can perform this action.
+```
+
+
