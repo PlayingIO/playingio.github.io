@@ -50,7 +50,7 @@ Any missions which were bootstrapped will be created and listed here when the pl
 
 |   Name   | Type   | Default | Required |   Description   |
 |----------|--------|---------|----------|-----------------|
-| skip     | number | 10      |          | Number of missions to skip. |
+| skip     | number | 0       |          | Number of missions to skip. |
 | limit    | number | 10      |          | Maximum number of missions to return. |
 | state    | string | ACTIVE  |          | Comma separated list of mission states to filter by. Mission states: ACTIVE, COMPLETED. |
 
