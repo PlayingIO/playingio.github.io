@@ -178,6 +178,11 @@ Get information about a particular team instance.
 }
 ```
 
+#### Errors
+
+```
+401 access_denied: Only members can view state of private teams
+```
 
 ## Create a Team
 
@@ -222,6 +227,16 @@ It returns the state of the newly created team.
   "total_members": 1
 }
 ```
+
+#### Errors
+
+```
+403 forbidden: Player does not meet requirements to create a team of that definition.
+404 team_definition_not_found: Invalid team_definition_id.
+400 invalid_access_setting: Requested access settings are invalid.
+409 team_instance_exists: A team with the same ID already exists.
+```
+
 
 ## Join a Team
 
