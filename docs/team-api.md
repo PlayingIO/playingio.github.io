@@ -399,4 +399,31 @@ The requested roles should be in passed in the body of the request with the keys
 ```
 
 
+## List All Members of a Team
+
+```
+GET /teams/:primary/members
+```
+
+Get a list of all the players who are members of a team
+
+In case of a private team, only the members of the team can see this list.
+
+#### Response
+
+```json
+{
+  "data": [
+    {
+      "alias": "Neo",
+      "id": "neo"
+    },
+    {
+      "alias": "Trinity",
+      "id": "trinity"
+    }
+  ],
+  "total": 2
+}
+```
 
