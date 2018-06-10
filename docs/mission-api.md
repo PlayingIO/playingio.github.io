@@ -825,8 +825,8 @@ By default, if no start and end parameters are provided, the activity feed for t
 
 |   Name   | Type   | Default | Required |   Description   |
 |----------|--------|---------|----------|-----------------|
-| start    | date   |         |          | Earliest possible activity timestamp ISO format. |
-| end      | date   |         |          | Latest possible activity timestamp ISO format. |
+| start    | date   |         |          | Earliest possible activity timestamp in ISO format. |
+| end      | date   |         |          | Latest possible activity timestamp in ISO format. |
 
 #### Errors
 

@@ -823,3 +823,51 @@ The player must have the required roles granting the permission to lock/unlock t
 401 access_denied: Player does not have the required permissions to unlock the team
 ```
 
+
+## Get a Team's Activity Feed
+
+```
+GET /teams/:primary/activities
+```
+
+Get the team activity feed.
+
+By default, if start and end are not defined, the activity feed of the last 24 hours is returned.
+
+The start and end timestamps can be specified as an ISO Timestamp.
+
+#### Parameters
+
+|   Name   | Type   | Default | Required |   Description   |
+|----------|--------|---------|----------|-----------------|
+| start    | date   |         |          | Earliest possible activity timestamp in ISO format. |
+| end      | date   |         |          | Latest possible activity timestamp in ISO format. |
+
+#### Response
+
+```json
+[
+  {
+    "event": "invite:accept",
+    "timestamp": "2014-03-02T12:34:34.474Z",
+    "actor": {
+      "id": "morpheus",
+      "alias": "Morpheus"
+    },
+    "inviter": {
+      "id": "neo",
+      "alias": "Neo"
+    },
+    "roles": {
+      "Member": true
+    },
+    "id": "02aefca0-a207-11e3-b0b2-6be1ca7db7ba"
+  }
+]
+```
+
+#### Errors
+
+```
+400 invalid_date: Requested date format is invalid.
+```
