@@ -1040,3 +1040,50 @@ A player who cannot approve any new player to join the team will get an error wh
 ```
 
 
+## Approve Team Join or Role Change Request
+
+```
+PATCH /teams/:primary/approvals/:request_id
+```
+
+Accept a player request to join a team.
+
+The player who accepts the request must have sufficient privileges to do so.
+
+It returns the accepted approval request.
+
+#### Response
+
+```json
+{
+  "event": "join:request",
+  "timestamp": "2014-03-02T21:19:43.002Z",
+  "actor": {
+    "id": "trinity",
+    "alias": "Trinity"
+  },
+  "team": {
+    "id": "hackers",
+    "name": "The Hackers"
+  },
+  "roles": {
+    "God": true
+  },
+  "state": "ACCEPTED",
+  "id": "5f3acfa0-a250-11e3-9af5-753d0e60669a",
+  "accepted_by": {
+    "id": "morpheus",
+    "alias": "Morpheus"
+  },
+  "accepted_at": "2014-03-02T22:03:06.948Z"
+}
+```
+
+#### Errors
+
+```
+404 invalid_approval_request: Invalid request_id. There is no such request.
+401 team_locked: Cannot perform operation when team is locked.
+401 access_denied: Player is not authorized to approve the request.
+```
+
