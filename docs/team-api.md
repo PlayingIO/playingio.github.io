@@ -427,3 +427,54 @@ In case of a private team, only the members of the team can see this list.
 }
 ```
 
+
+## Get the Profile of a Team Member
+
+```
+GET /teams/:primary/members/:id
+```
+
+Get a team member's profile. Only fellow team members can see the profile.
+
+#### Response
+
+```json
+{
+  "id": "neo",
+  "created": "2014-03-02T18:03:59.848Z",
+  "enabled": true,
+  "alias": "The One",
+  "scores": [
+    {
+      "metric": {
+        "id": "xp",
+        "name": "experience",
+        "type": "point"
+      },
+      "value": "100"
+    }
+  ],
+  "teams": [
+    {
+      "id": "hackers",
+      "definition": {
+        "id": "international",
+        "name": "international"
+      },
+      "roles": [
+        "hacker"
+      ],
+      "name": "TheMatrix"
+    }
+  ]
+}
+```
+
+#### Errors
+
+```json
+401 access_denied: Player not authorized. In PRIVATE teams, only team members can view the team.
+404player_not_found: Requested player is not a part of that team.
+```
+
+
