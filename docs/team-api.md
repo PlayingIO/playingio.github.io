@@ -505,3 +505,45 @@ Team owners can not be kicked. Members who kick must have sufficient privileges 
 ```
 
 
+## Change Roles of a Team Member
+
+```
+PATCH /teams/:primary/roles/:id
+```
+
+Update roles of a member.
+
+To perform the role update, the player must have sufficient privileges within the team else an error is returned. All members in the team must have at least 1 role.
+
+The required roles should be specified in the request body.
+
+Response with the new roles and their ranks is returned.
+
+#### Request
+
+```json
+{
+  "mentor": true,
+  "hacker": false
+}
+```
+
+#### Response
+
+```json
+{
+  "message": "You have successfully changed member trinity roles in team hacker",
+  "roles": [
+    "mentor"
+  ]
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player does not have required permissions to perform the role update.
+404 member_not_found: Requested player not found in the team.
+400 invalid_role: Invalid role requested.
+```
+
