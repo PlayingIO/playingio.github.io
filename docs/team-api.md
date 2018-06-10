@@ -609,3 +609,54 @@ The original owner will remain a part of the team with older roles in the team a
 ```
 
 
+## Update Team Settings
+
+```
+PATCH /teams/:id
+```
+
+Update team settings.
+
+Only the owner can perform this action.
+
+Only the team name and access setting can be updated. The new values should be sent as an object in the request body.
+
+The updated state of the team is returned.
+
+#### Parameters
+
+|   Name    | Type   | Default | Required |   Description   |
+|-----------|--------|---------|----------|-----------------|
+| groupname | string |         | ✓        | The required team name. |
+| access    | object |         | ✓        | The required team access setting. Valid access settings: PUBLIC, PROTECTED, PRIVATE. |
+
+  
+#### Request
+
+```json
+{
+  "access": "PUBLIC"
+}
+```
+
+#### Response
+
+```
+{
+  "id": "guardians",
+  "name": "The Gaurdians",
+  "definition": "immortals",
+  "created": "2014-03-01T16:29:30.088Z",
+  "access": "PUBLIC",
+  "owner": "star_lord",
+  "locked": false,
+  "member_count": {
+    "God": 2
+  },
+  "total_members": 2
+}
+```
+
+
+
+  
