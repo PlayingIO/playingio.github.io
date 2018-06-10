@@ -657,6 +657,39 @@ The updated state of the team is returned.
 }
 ```
 
+#### Errors
+
+```
+401 access_denied: Player not authorized. Only team owner can update the team.
+400 invalid_access_setting: Requested access setting is invalid.
+```
 
 
-  
+## Disband a Team
+
+```
+DELETE /teams/:team_id
+```
+
+Disband a team.
+
+All members of the team will be removed from the team.
+
+A confirmation message for the event is returned.
+
+#### Response
+
+```json
+{
+  "message": "Team 'avengers' disbanded successfully"
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player not authorized. Only team owner can disband a team.
+```
+
+
+
