@@ -223,3 +223,58 @@ It returns the state of the newly created team.
 }
 ```
 
+## Join a Team
+
+```
+POST /teams/:primary/members
+```
+
+Join a team.
+
+You must specify the roles with which you want to join the team. The roles available to join depend on the team definition.
+
+If the team is public then he is added to the team and the player's roles are returned. If the team is protected then a generated approval request to join the team is returned. If the team is private an error is returned.
+
+The requested roles should be specified as an object in the request body with the keys being the requested role.
+
+The response returned are the player's roles. The key is the name of the role and the value is the its rank.
+
+#### Request
+
+```json
+{
+   "hacker": true
+}
+```
+
+#### Response
+
+* In case of a public team.
+
+```json
+{
+   "hacker": true
+}
+```
+
+* In case of a protected team.
+
+```json
+{
+  "id": "520512b563c67d641e000002",
+  "event": "join:request",
+  "timestamp": "2014-03-02T18:03:59.848Z",
+  "actor": {
+    "id": "droid",
+    "alias": "Droid!"
+  },
+  "team": {
+    "id": "anonymous",
+    "name": "Anonymous"
+  },
+  "roles": {
+    "hacker": true
+  },
+  "state": "PENDING"
+}
+```
