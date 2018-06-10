@@ -940,3 +940,46 @@ It returns the invitation request.
 409 already_invited: An invitation has already been sent to the requested player.
 ```
 
+
+## Cancel a Sent Invitation
+
+```
+DELETE /teams/:primary/invites/:invite_id
+```
+
+Cancel a pending invite sent out by the player.
+
+It returns the canceled invitation request.
+
+#### Response
+
+```json
+{
+  "event": "invite",
+  "timestamp": "2014-03-02T18:03:59.848Z"
+  "team": {
+    "id": "hackers",
+    "name": "Hackers"
+  },
+  "actor": {
+    "id": "neo",
+    "name": "Neo"
+  },
+  "invitee": {
+    "id": "trinity",
+    "name": "Trinity"
+  },
+  "roles": {
+    "Member": true
+  },
+  "state": "CANCELLED",
+  "id": "052de920-a174-11e3-b581-1b9a3fec215b"
+  "cancelled_at": "2014-03-02T18:04:08.507Z"
+}
+```
+
+#### Errors
+
+```
+404 invalid_invite: Invalid invite_id.
+```
