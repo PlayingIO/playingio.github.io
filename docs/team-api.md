@@ -692,4 +692,69 @@ A confirmation message for the event is returned.
 ```
 
 
+## Lock a Team
+
+```
+POST /teams/:primary/lock
+```
+
+Lock a team. Locking a team prevents new players from joining/leaving the team.
+
+The player must have the required roles granting the permission to lock/unlock the team.
+
+#### Response
+
+```json
+{
+  "id": "globe-trotters",
+  "name": "The Globe Trotters",
+  "definition": {
+    "id": "basketball_team",
+    "name": "Basketball Team"
+  },
+  "created": "2013-11-10T16:49:10.570Z",
+  "access": "PUBLIC",
+  "owner": {
+    "id": "clone",
+    "alias": "Clonie"
+  },
+  "locked": true,
+  "member_count": [
+    {
+      "name": "member",
+      "count": 10
+    },
+    {
+      "name": "admin",
+      "count": 0
+    },
+    {
+      "name": "super_admin",
+      "count": 0
+    },
+    {
+      "name": "owner",
+      "count": 1
+    }
+  ],
+  "total_members": 11,
+  "roles": [
+    "admin",
+    "member",
+    "owner",
+    "super_admin"
+  ],
+  "my_roles": [
+    "owner"
+  ],
+  "can_leave": false
+}
+```
+
+#### Errors
+
+```
+401 access_denied: Player does not have the required permissions to lock the team
+```
+
 
