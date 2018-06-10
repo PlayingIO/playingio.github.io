@@ -303,3 +303,30 @@ The response returned are the player's roles. The key is the name of the role an
 401 access_denied: Cannot join a private team.
 ```
 
+
+## Leave a Team
+
+```
+DELETE /teams/:id
+```
+
+Leave a team instance who's id is specified.
+
+It returns a confirmation message of the event.
+
+#### Response
+
+```json
+{
+  "message": "The player 'hulk' has been removed from team 'avengers'"
+}
+```
+
+#### Errors
+
+```
+403 forbidden: Player cannot leave the team.
+404 member_not_found: Player not a member of the team.
+```
+
+
