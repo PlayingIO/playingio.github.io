@@ -293,3 +293,13 @@ The response returned are the player's roles. The key is the name of the role an
   "state": "PENDING"
 }
 ```
+
+#### Errors
+
+```
+409 player_exists: Player already a part of the team.
+401 team_locked: Team is locked. Cannot add new players.
+400 invalid_role: Requested role is invalid.
+401 access_denied: Cannot join a private team.
+```
+
