@@ -630,7 +630,7 @@ The updated state of the team is returned.
 | groupname | string |         | ✓        | The required team name. |
 | access    | object |         | ✓        | The required team access setting. Valid access settings: PUBLIC, PROTECTED, PRIVATE. |
 
-  
+
 #### Request
 
 ```json

@@ -253,7 +253,7 @@ The response is an an array of objects. The data key of those objects contains r
 | start    | date   |         | ✓        | Valid date string, format - YYYY-mm-dd (eg. 2013-12-13). Specifies the start date for the trend. |
 | end      | date   |         | ✓        | Valid date string, format - YYYY-mm-dd (eg. 2013-12-13). Specifies the end date for the trend. |
 | team     | string |         | ✓        | ID of the team instance, required when the leaderboard is of type Team Instance. |
- 
+
 #### Response
 
 ```
